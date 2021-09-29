@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/fragmentChoixResp">
+
+    <fragment
+        android:id="@+id/fragmentChoixResp"
+        android:name="fr.eseo.carlieva.android_app.fragmentChoixResp"
+        android:label="fragment_choix_resp"
+        tools:layout="@layout/fragment_choix_resp" />
+</navigation>
