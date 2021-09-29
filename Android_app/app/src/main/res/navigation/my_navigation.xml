@@ -7,7 +7,16 @@
 
     <fragment
         android:id="@+id/fragmentChoixResp"
-        android:name="fr.eseo.carlieva.android_app.fragmentChoixResp"
+        android:name="fr.eseo.carlieva.android_app.FragmentChoixResp"
         android:label="fragment_choix_resp"
         tools:layout="@layout/fragment_choix_resp" />
+        <action
+            android:id="@+id/action_fragmentChoixResp_to_ScrumMasterMenu"
+            app:destination="@id/fragmentScrumMasterMenu" />
+
+    <fragment
+        android:id="@+id/fragmentScrumMasterMenu"
+        android:name="fr.eseo.carlieva.android_app.ScrumMasterMenu"
+        android:label="fragment_choix_resp"
+        tools:layout="@layout/fragment_scrum_master_menu" />
 </navigation>
