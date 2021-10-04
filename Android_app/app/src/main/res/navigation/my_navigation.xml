@@ -13,10 +13,21 @@
         <action
             android:id="@+id/action_fragmentChoixResp_to_ScrumMasterMenu"
             app:destination="@id/fragmentScrumMasterMenu" />
+        <action
+            android:id="@+id/action_fragmentChoixResp_to_TeamMemberMenu"
+            app:destination="@id/fragmentTeamMemberMenu" />
+
 
     <fragment
         android:id="@+id/fragmentScrumMasterMenu"
         android:name="fr.eseo.carlieva.android_app.ScrumMasterMenu"
-        android:label="fragment_choix_resp"
+        android:label="fragment_scrum_master_menu"
         tools:layout="@layout/fragment_scrum_master_menu" />
+
+    <fragment
+        android:id="@+id/fragmentTeamMemberMenu"
+        android:name="fr.eseo.carlieva.android_app.TeamMemberMenu"
+        android:label="fragment_team_member_menu"
+        tools:layout="@layout/fragment_team_member_menu" />
+
 </navigation>

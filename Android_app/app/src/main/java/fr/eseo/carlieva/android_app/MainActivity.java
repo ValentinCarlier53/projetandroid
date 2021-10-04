@@ -42,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
                 //actionBar.setDisplayHomeAsUpEnabled(true);
                 navController.navigate(R.id.action_fragmentChoixResp_to_ScrumMasterMenu);
                 break;
+            case FRAGMENT_TEAM_MEMBER_MENU:
+                //actionBar.setDisplayHomeAsUpEnabled(true);
+                navController.navigate(R.id.action_fragmentChoixResp_to_TeamMemberMenu);
+                break;
+            /*case FRAGMENT_CREATION_EQUIPE:
+                //actionBar.setDisplayHomeAsUpEnabled(true);
+                navController.navigate(R.id.action_fragmentChoixResp_to_TeamMemberMenu);
+                break;*/
             default:
                 break;
         }

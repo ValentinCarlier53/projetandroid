@@ -3,5 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ParamètreVisio">Visio_Params</string>
+    <string name="JoindreUneEquipe">Joindre une équipe</string>
+    <string name="ScrumMaster">Scrum Master</string>
+    <string name="TeamMember">Team Member</string>
 
 </resources>
