@@ -11,7 +11,7 @@ import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentChoixResp#newInstance} factory method to
+ * Use the  factory method to
  * create an instance of this fragment.
  */
 public class FragmentChoixResp extends Fragment implements View.OnClickListener {
@@ -26,6 +26,7 @@ public class FragmentChoixResp extends Fragment implements View.OnClickListener 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_choix_resp, container, false);
+
         buttonScrumMaster = root.findViewById(R.id.buttonScrumMaster);
         buttonScrumMaster.setOnClickListener(this);
         buttonTeamMember = root.findViewById(R.id.buttonTeamMember);
