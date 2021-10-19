@@ -1,9 +1,8 @@
-package fr.eseo.carlieva.android_app;
+package fr.eseo.carlieva.android_app.fragments;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +18,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.eseo.carlieva.android_app.activity.MainActivity;
+import fr.eseo.carlieva.android_app.R;
 import fr.eseo.carlieva.android_app.pojo.Team;
 
 /**

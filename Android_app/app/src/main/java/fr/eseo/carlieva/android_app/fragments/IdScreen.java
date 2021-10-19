@@ -1,4 +1,4 @@
-package fr.eseo.carlieva.android_app;
+package fr.eseo.carlieva.android_app.fragments;
 /**
  * Enumeration of Screens in app
  */

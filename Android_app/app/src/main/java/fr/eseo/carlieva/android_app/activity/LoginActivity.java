@@ -1,4 +1,4 @@
-package fr.eseo.carlieva.android_app;
+package fr.eseo.carlieva.android_app.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import fr.eseo.carlieva.android_app.bddadd.CurrentUser;
+import fr.eseo.carlieva.android_app.R;
 
 public class LoginActivity extends AppCompatActivity {
 

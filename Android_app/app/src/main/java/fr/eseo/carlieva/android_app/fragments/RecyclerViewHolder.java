@@ -1,4 +1,4 @@
-package fr.eseo.carlieva.android_app;
+package fr.eseo.carlieva.android_app.fragments;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -6,6 +6,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.Random;
+
+import fr.eseo.carlieva.android_app.R;
 
 
 public class RecyclerViewHolder extends RecyclerView.ViewHolder {

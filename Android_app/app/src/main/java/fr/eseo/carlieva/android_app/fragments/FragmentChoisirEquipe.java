@@ -1,6 +1,6 @@
 
 
-package fr.eseo.carlieva.android_app;
+package fr.eseo.carlieva.android_app.fragments;
 
 import android.os.Bundle;
 
@@ -8,11 +8,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -22,9 +20,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.eseo.carlieva.android_app.pojo.User;
-import fr.eseo.carlieva.android_app.service.UserService;
-
+import fr.eseo.carlieva.android_app.R;
 
 
 public class FragmentChoisirEquipe extends Fragment  {

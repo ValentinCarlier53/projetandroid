@@ -1,4 +1,4 @@
-package fr.eseo.carlieva.android_app;
+package fr.eseo.carlieva.android_app.fragments;
 
 import android.os.Bundle;
 
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import fr.eseo.carlieva.android_app.R;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentChoixResp"
-        android:name="fr.eseo.carlieva.android_app.FragmentChoixResp"
+        android:name="fr.eseo.carlieva.android_app.fragments.FragmentChoixResp"
         android:label="fragment_choix_resp"
         tools:layout="@layout/fragment_choix_resp" >
         <action
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/fragmentScrumMasterMenu"
-        android:name="fr.eseo.carlieva.android_app.ScrumMasterMenu"
+        android:name="fr.eseo.carlieva.android_app.fragments.ScrumMasterMenu"
         android:label="fragment_scrum_master_menu"
         tools:layout="@layout/fragment_scrum_master_menu" >
 
@@ -35,21 +35,21 @@
 
     <fragment
         android:id="@+id/fragmentCreationEquipe"
-        android:name="fr.eseo.carlieva.android_app.CreationEquipe"
+        android:name="fr.eseo.carlieva.android_app.fragments.CreationEquipe"
         android:label="fragment_creation_equipe"
         tools:layout="@layout/fragment_creation_equipe" >
     </fragment>
 
     <fragment
         android:id="@+id/ChoisirUneEquipe"
-        android:name="fr.eseo.carlieva.android_app.FragmentChoisirEquipe"
+        android:name="fr.eseo.carlieva.android_app.fragments.FragmentChoisirEquipe"
         android:label="fragment_choisir_une_equipe"
         tools:layout="@layout/fragment_choisir_equipe" >
     </fragment>
 
     <fragment
         android:id="@+id/fragmentTeamMemberMenu"
-        android:name="fr.eseo.carlieva.android_app.TeamMemberMenu"
+        android:name="fr.eseo.carlieva.android_app.fragments.TeamMemberMenu"
         android:label="fragment_team_member_menu"
         tools:layout="@layout/fragment_team_member_menu" >
     </fragment>
