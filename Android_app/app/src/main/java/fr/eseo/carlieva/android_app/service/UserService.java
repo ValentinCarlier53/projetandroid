@@ -35,13 +35,7 @@ public class UserService {
     public UserService() {
     }
 
-    public ArrayList<User> getUsers() {
-        return users;
-    }
 
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
-    }
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";
@@ -103,7 +97,7 @@ public class UserService {
                             for (int i=0; i<list.size();i++) {
 
                                 users.add(new User(list.get(i).get("Mail").toString(),list.get(i).get("Prenom").toString(),list.get(i).get("Nom").toString()));
-
+                                Log.d(TAG,"interieur"+users.size());
 
 
                             }

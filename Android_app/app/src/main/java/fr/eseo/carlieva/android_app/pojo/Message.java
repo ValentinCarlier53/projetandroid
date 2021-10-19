@@ -9,8 +9,6 @@ import java.util.Date;
 
 public class Message implements Serializable {
 
-
-
     @Exclude
     private String id;
 
