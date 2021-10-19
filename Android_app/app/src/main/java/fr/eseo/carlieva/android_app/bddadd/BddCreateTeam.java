@@ -24,8 +24,9 @@ public class BddCreateTeam extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_scrum_master_menu);
         Map<String, Object> team = new HashMap<>();
-        team.put("Nom", "LD");
-        team.put("Users", FieldValue.arrayUnion("salut"));
+        team.put("Nom", "md");
+        team.put("Users", FieldValue.arrayUnion("usermail1","useemail2"));
+        team.put("us", FieldValue.arrayUnion("ustitle1","ustitle2"));
         db.collection("Team")
                 .add(team);
 

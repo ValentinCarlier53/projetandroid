@@ -34,6 +34,7 @@ public class GetDataMessage extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        Log.d(TAG,String.valueOf("salut"));
                         Log.d(TAG,String.valueOf("essai"+queryDocumentSnapshots.size()) );
 
                         if (!queryDocumentSnapshots.isEmpty()) {
@@ -49,7 +50,7 @@ public class GetDataMessage extends AppCompatActivity {
                             }
                             /*ArrayAdapter<Message> arrayAdapter
                                     = new ArrayAdapter<Message>(this, messageList);*/
-                            Log.d(TAG, messageList.get(0).toString());
+                            Log.d(TAG, messageList.get(0).getText());
 
 
                         }
