@@ -1,14 +1,11 @@
-package fr.eseo.carlieva.android_app.bddget;
+package fr.eseo.carlieva.android_app.bddadd;
 
 import android.os.Bundle;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -23,8 +20,7 @@ import java.util.Map;
 
 import fr.eseo.carlieva.android_app.R;
 
-public class GetData2 extends AppCompatActivity  {
-
+public class BddAddUsVote extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";
 
@@ -35,8 +31,22 @@ public class GetData2 extends AppCompatActivity  {
 
         CollectionReference teams = db.collection("Team");
 
+        db.collection("Team") .whereEqualTo("Nom","LD")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot snapshots,
+                                        @Nullable FirebaseFirestoreException e) {
+                        Log.d(TAG, "je suis passé là");
+                        Map<String, Object> team = new HashMap<>();
+                        team.put("Users", FieldValue.arrayUnion("rééssai"));
 
+                        List<DocumentSnapshot> list = snapshots.getDocuments();
+                        for(int i=0; i<list.size();i++){
+                            list.get(0).getReference().update(team);
+                        }
+
+                    }
+                });
 
     }
-
 }

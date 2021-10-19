@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/fragmentChoixResp">
+
+    <fragment
+        android:id="@+id/fragmentChoixResp"
+        android:name="fr.eseo.carlieva.android_app.FragmentChoixResp"
+        android:label="fragment_choix_resp"
+        tools:layout="@layout/fragment_choix_resp" >
+        <action
+            android:id="@+id/action_fragmentChoixResp_to_ScrumMasterMenu"
+            app:destination="@id/fragmentScrumMasterMenu" />
+        <action
+            android:id="@+id/action_fragmentChoixResp_to_TeamMemberMenu"
+            app:destination="@id/fragmentTeamMemberMenu" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/fragmentScrumMasterMenu"
+        android:name="fr.eseo.carlieva.android_app.ScrumMasterMenu"
+        android:label="fragment_scrum_master_menu"
+        tools:layout="@layout/fragment_scrum_master_menu" >
+
+        <action
+            android:id="@+id/action_ScrumMasterMenu_to_fragment_creation_equipe"
+            app:destination="@id/fragmentCreationEquipe" />
+        <action
+            android:id="@+id/action_ScrumMasterMenu_to_fragment_choisir_equipe"
+            app:destination="@id/ChoisirUneEquipe" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentCreationEquipe"
+        android:name="fr.eseo.carlieva.android_app.CreationEquipe"
+        android:label="fragment_creation_equipe"
+        tools:layout="@layout/fragment_creation_equipe" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/ChoisirUneEquipe"
+        android:name="fr.eseo.carlieva.android_app.FragmentChoisirEquipe"
+        android:label="fragment_choisir_une_equipe"
+        tools:layout="@layout/fragment_choisir_equipe" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentTeamMemberMenu"
+        android:name="fr.eseo.carlieva.android_app.TeamMemberMenu"
+        android:label="fragment_team_member_menu"
+        tools:layout="@layout/fragment_team_member_menu" >
+    </fragment>
+
+</navigation>

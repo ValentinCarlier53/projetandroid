@@ -11,12 +11,11 @@ public class Team {
 
     private String nom;
 
-    private ArrayList<User> users = new ArrayList<User>();
+    private ArrayList<String> users = new ArrayList<String>();
 
-    private ArrayList<UserStory> us = new ArrayList<UserStory>();
+    private ArrayList<String> us = new ArrayList<String>();
 
-    public Team(String id, String nom, ArrayList<User> users, ArrayList<UserStory> us) {
-        this.id = id;
+    public Team( String nom, ArrayList<String> users, ArrayList<String> us) {
         this.nom = nom;
         this.users = users;
         this.us = us;
@@ -38,19 +37,19 @@ public class Team {
         this.nom = nom;
     }
 
-    public ArrayList<User> getUsers() {
+    public ArrayList<String> getUsers() {
         return users;
     }
 
-    public void setUsers(ArrayList<User> users) {
+    public void setUsers(ArrayList<String> users) {
         this.users = users;
     }
 
-    public ArrayList<UserStory> getUs() {
+    public ArrayList<String> getUs() {
         return us;
     }
 
-    public void setUs(ArrayList<UserStory> us) {
+    public void setUs(ArrayList<String> us) {
         this.us = us;
     }
 

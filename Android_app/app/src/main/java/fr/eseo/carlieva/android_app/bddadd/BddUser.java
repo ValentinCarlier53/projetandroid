@@ -1,6 +1,7 @@
 package fr.eseo.carlieva.android_app.bddadd;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,6 +31,7 @@ public class BddUser extends AppCompatActivity {
 
         db.collection("User")
                 .add(user);
+
 
     }
 

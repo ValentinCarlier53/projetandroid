@@ -20,14 +20,16 @@ import fr.eseo.carlieva.android_app.R;
 public class CurrentUser extends AppCompatActivity {
 
     private static final String TAG = "DocSnippets";
-    private FirebaseAuth mAuth= FirebaseAuth.getInstance();
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.get_data_message);
 
+        FirebaseAuth mAuth= FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if (currentUser != null) {
@@ -47,6 +49,7 @@ public class CurrentUser extends AppCompatActivity {
                                     if(mAuth.getCurrentUser().getEmail().equals(list.get(i).get("Mail").toString())){
                                         Log.d(TAG, list.get(i).get("Prenom").toString()+list.get(i).get("Nom").toString());
                                     }
+
 
                                 }
                             /*ArrayAdapter<Message> arrayAdapter

@@ -13,6 +13,10 @@ public class User {
 
     private String nom;
 
+    private boolean responsible;
+
+    public User(){}
+    
     public User(String mail, String prenom, String nom) {
         this.mail = mail;
         this.prenom = prenom;
@@ -41,6 +45,18 @@ public class User {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public boolean isResponsible() {
+        return responsible;
+    }
+
+    public void setResponsible(boolean responsible) {
+        this.responsible = responsible;
+    }
+
+    public String toString(){
+        return getMail()+getPrenom()+getNom();
     }
 
 }
