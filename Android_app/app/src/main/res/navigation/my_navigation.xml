@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/userStories"
-        android:name="fr.eseo.carlieva.android_app.UserStories"
+        android:name="fr.eseo.carlieva.android_app.fragments.UserStories"
         android:label="fragment_user_stories"
         tools:layout="@layout/fragment_user_stories" >
         <action
