@@ -18,6 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import fr.eseo.carlieva.android_app.R;
+import fr.eseo.carlieva.android_app.fragments.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

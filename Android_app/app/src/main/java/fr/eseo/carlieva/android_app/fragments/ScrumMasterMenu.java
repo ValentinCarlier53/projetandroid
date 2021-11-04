@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import fr.eseo.carlieva.android_app.activity.MainActivity;
 import fr.eseo.carlieva.android_app.R;
 
 /**

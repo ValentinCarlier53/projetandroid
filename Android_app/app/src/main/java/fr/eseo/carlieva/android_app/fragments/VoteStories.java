@@ -1,4 +1,4 @@
-package fr.eseo.carlieva.android_app;
+package fr.eseo.carlieva.android_app.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+
+import fr.eseo.carlieva.android_app.R;
 
 public class VoteStories extends Fragment implements View.OnClickListener {
     public VoteStories() {

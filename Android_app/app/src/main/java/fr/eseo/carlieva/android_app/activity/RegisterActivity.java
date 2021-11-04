@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 import fr.eseo.carlieva.android_app.R;
+import fr.eseo.carlieva.android_app.fragments.MainActivity;
 
 public class RegisterActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package fr.eseo.carlieva.android_app.activity;
+package fr.eseo.carlieva.android_app.fragments;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import fr.eseo.carlieva.android_app.R;
-import fr.eseo.carlieva.android_app.fragments.IdScreen;
 
 public class MainActivity extends AppCompatActivity {
     NavController navController;

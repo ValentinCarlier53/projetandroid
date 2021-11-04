@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/voteStories2"
-        android:name="fr.eseo.carlieva.android_app.VoteStories"
+        android:name="fr.eseo.carlieva.android_app.fragments.VoteStories"
         android:label="VoteStories" />
 
 </navigation>
