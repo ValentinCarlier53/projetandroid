@@ -8,7 +8,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -29,7 +33,8 @@ import fr.eseo.carlieva.android_app.pojo.Team;
  */
 public class CreationEquipe extends Fragment implements View.OnClickListener{
     private View root;
-    private Button buttonCreerEquipe;
+    //private Button buttonCreerEquipe;
+    ListView listView;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private List<ListName> listName;
     ArrayList<Team> teams = new ArrayList<Team>();
@@ -67,8 +72,46 @@ public class CreationEquipe extends Fragment implements View.OnClickListener{
                 });
         Log.d("TAG","onCreateView CreationEquipe");
         root = inflater.inflate(R.layout.fragment_creation_equipe, container, false);
-        buttonCreerEquipe = root.findViewById(R.id.buttonCréerEquipe1);
-        buttonCreerEquipe.setOnClickListener(this);
+        /*buttonCreerEquipe = root.findViewById(R.id.buttonCréerEquipe1);
+        buttonCreerEquipe.setOnClickListener(this);*/
+        String [] menuItems={"Équipe 1",
+                "Équipe 2",
+                "Équipe 3",
+                "Équipe 4",
+                "Équipe 5",
+                "Équipe 6"
+        };
+        listView=(ListView) root.findViewById(R.id.ListTeam);
+        ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                menuItems
+        );
+        listView.setAdapter(listViewAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position==0){
+                    Toast.makeText(getActivity(),"first team", Toast.LENGTH_SHORT).show();
+                }
+                else if (position ==1){
+                    Toast.makeText(getActivity(),"second team", Toast.LENGTH_SHORT).show();
+                }
+                else if (position ==2){
+                    Toast.makeText(getActivity(),"third team", Toast.LENGTH_SHORT).show();
+                }
+                else if (position ==3){
+                    Toast.makeText(getActivity(),"fourth team", Toast.LENGTH_SHORT).show();
+                }
+                else if (position ==4){
+                    Toast.makeText(getActivity(),"fifth team", Toast.LENGTH_SHORT).show();
+                }
+                else if (position ==5){
+                    Toast.makeText(getActivity(),"sixth team", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
         return root;
     }
 
@@ -76,10 +119,10 @@ public class CreationEquipe extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         MainActivity main = (MainActivity) getActivity();
         switch (v.getId()) {
-            case R.id.buttonCréerEquipe1:
+           /* case R.id.buttonCréerEquipe1:
                 main.displayScreen(IdScreen.FRAGMENT_CREATION_EQUIPE);
                 Log.d("TAG","SECONDE ENTREE");
-                break;
+                break;*/
             default:
                 break;
         }

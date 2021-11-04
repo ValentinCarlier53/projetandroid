@@ -52,6 +52,22 @@
         android:name="fr.eseo.carlieva.android_app.fragments.TeamMemberMenu"
         android:label="fragment_team_member_menu"
         tools:layout="@layout/fragment_team_member_menu" >
+        <action
+            android:id="@+id/action_fragmentTeamMemberMenu_to_userStories"
+            app:destination="@id/userStories" />
     </fragment>
+    <fragment
+        android:id="@+id/userStories"
+        android:name="fr.eseo.carlieva.android_app.UserStories"
+        android:label="fragment_user_stories"
+        tools:layout="@layout/fragment_user_stories" >
+        <action
+            android:id="@+id/action_userStories_to_voteStories2"
+            app:destination="@id/voteStories2" />
+    </fragment>
+    <fragment
+        android:id="@+id/voteStories2"
+        android:name="fr.eseo.carlieva.android_app.VoteStories"
+        android:label="VoteStories" />
 
 </navigation>
