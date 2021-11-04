@@ -9,10 +9,18 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23072916666666668" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.23509182374270762" />
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.23072916666666668" />
-        <entry key="app/src/main/res/layout/fragment_choisir_equipe.xml" value="0.4112264399532642" />
-        <entry key="app/src/main/res/layout/fragment_creation_equipe.xml" value="0.12864583333333332" />
+        <entry key="app/src/main/res/layout/fragment_choisir_equipe.xml" value="0.2535410764872521" />
+        <entry key="app/src/main/res/layout/fragment_choix_resp.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_creation_equipe.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_scrum_master_menu.xml" value="0.38958333333333334" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_team_member_menu.xml" value="0.278125" />
+        <entry key="app/src/main/res/layout/fragment_user_stories.xml" value="0.278125" />
+        <entry key="app/src/main/res/layout/fragment_vote_user_story.xml" value="0.25" />
         <entry key="app/src/main/res/layout/get_data_message.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/list_of_names.xml" value="0.278125" />
+        <entry key="app/src/main/res/layout/vote_user_story.xml" value="0.278125" />
       </map>
     </option>
   </component>

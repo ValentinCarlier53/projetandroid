@@ -28,7 +28,7 @@ import fr.eseo.carlieva.android_app.service.UserService;
 
 
 
-public class FragmentChoisirEquipe extends Fragment implements Adapter.OnItemClickListener {
+public class FragmentChoisirEquipe extends Fragment  {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";
@@ -55,11 +55,11 @@ public class FragmentChoisirEquipe extends Fragment implements Adapter.OnItemCli
         listName.add(new ListName("Jean-Baptiste","Le Henaff"));
 
         // Add the following lines to create RecyclerView
-        recyclerView = view.findViewById(R.id.recyclerview);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        onClickRecyclerAdapter= new Adapter<ListName>(listName,this);
-        recyclerView.setAdapter(onClickRecyclerAdapter);
+        //recyclerView = view.findViewById(R.id.recyclerview);
+        //recyclerView.setHasFixedSize(true);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        //onClickRecyclerAdapter= new Adapter<ListName>(listName,this);
+       // recyclerView.setAdapter(onClickRecyclerAdapter);
 
         //Log.d(TAG,"taille"+new UserService().getAllUser());
         //
@@ -121,9 +121,9 @@ public class FragmentChoisirEquipe extends Fragment implements Adapter.OnItemCli
         return view;
     }
 
-    @Override
+    /*@Override
     public void onItemClick(int position) {
         listName.get(position);
         Toast.makeText(getActivity(), "item clicked", Toast.LENGTH_LONG).show();
-    }
+    }*/
 }
