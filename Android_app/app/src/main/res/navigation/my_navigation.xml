@@ -35,14 +35,14 @@
 
     <fragment
         android:id="@+id/fragmentCreationEquipe"
-        android:name="fr.eseo.carlieva.android_app.fragments.JoindreEquipe"
+        android:name="fr.eseo.carlieva.android_app.fragments.fragmentChoisirEquipe"
         android:label="fragment_creation_equipe"
         tools:layout="@layout/fragment_creation_equipe" >
     </fragment>
 
     <fragment
         android:id="@+id/ChoisirUneEquipe"
-        android:name="fr.eseo.carlieva.android_app.fragments.FragmentChoisirEquipe"
+        android:name="fr.eseo.carlieva.android_app.fragments.FragmentCreationEquipe"
         android:label="fragment_choisir_une_equipe"
         tools:layout="@layout/fragment_choisir_equipe" >
     </fragment>
