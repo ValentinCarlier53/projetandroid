@@ -35,7 +35,7 @@
 
     <fragment
         android:id="@+id/fragmentCreationEquipe"
-        android:name="fr.eseo.carlieva.android_app.fragments.CreationEquipe"
+        android:name="fr.eseo.carlieva.android_app.fragments.JoindreEquipe"
         android:label="fragment_creation_equipe"
         tools:layout="@layout/fragment_creation_equipe" >
     </fragment>

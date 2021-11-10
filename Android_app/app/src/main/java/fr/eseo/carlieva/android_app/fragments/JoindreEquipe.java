@@ -29,7 +29,7 @@ import fr.eseo.carlieva.android_app.pojo.Team;
  * Use the  factory method to
  * create an instance of this fragment.
  */
-public class CreationEquipe extends Fragment implements View.OnClickListener{
+public class JoindreEquipe extends Fragment implements View.OnClickListener{
     private View root;
     //private Button buttonCreerEquipe;
     ListView listView;

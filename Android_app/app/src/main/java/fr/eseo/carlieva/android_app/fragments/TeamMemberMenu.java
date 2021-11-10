@@ -25,22 +25,13 @@ import java.util.List;
 import fr.eseo.carlieva.android_app.R;
 import fr.eseo.carlieva.android_app.pojo.Message;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TeamMemberMenu#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class TeamMemberMenu extends Fragment {
+    public TeamMemberMenu() {
+    }
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";
     ListView listView;
-
-
-
-    public TeamMemberMenu() {
-    }
-
     private View root;
 
     @Override
@@ -88,6 +79,7 @@ public class TeamMemberMenu extends Fragment {
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 Log.d(TAG,"passage2");
                                 MainActivity main = (MainActivity) getActivity();
+
                                 if (position==0){
                                     Toast.makeText(getActivity(),"first team", Toast.LENGTH_SHORT).show();
                                     main.displayScreen(IdScreen.FRAGMENT_USER_STORIES);
