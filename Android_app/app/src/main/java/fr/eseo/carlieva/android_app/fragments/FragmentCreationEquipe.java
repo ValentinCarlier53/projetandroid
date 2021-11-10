@@ -21,7 +21,7 @@ import java.util.List;
 import fr.eseo.carlieva.android_app.R;
 
 
-public class FragmentChoisirEquipe extends Fragment  {
+public class FragmentCreationEquipe extends Fragment  {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";

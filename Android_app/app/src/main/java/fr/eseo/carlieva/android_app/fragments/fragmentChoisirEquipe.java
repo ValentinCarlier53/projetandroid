@@ -29,40 +29,24 @@ import fr.eseo.carlieva.android_app.pojo.Team;
  * Use the  factory method to
  * create an instance of this fragment.
  */
-public class JoindreEquipe extends Fragment implements View.OnClickListener{
+public class fragmentChoisirEquipe extends Fragment {
     private View root;
-    //private Button buttonCreerEquipe;
-    ListView listView;
+    ListView listTeam;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private List<ListName> listName;
     ArrayList<Team> teams = new ArrayList<Team>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         db.collection("Team").get()
-
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-
-
                         if (!queryDocumentSnapshots.isEmpty()) {
-
                             List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-
-
-
                             for (int i=0; i<list.size();i++) {
-
                                 teams.add(new Team(list.get(i).get("Nom").toString(),new ArrayList<String>((List)list.get(i).get("Users")),new ArrayList<String>((List)list.get(i).get("us"))));
-
-
                             }
-
-
-
                         }
                     }
 
@@ -70,30 +54,25 @@ public class JoindreEquipe extends Fragment implements View.OnClickListener{
                 });
         Log.d("TAG","onCreateView CreationEquipe");
         root = inflater.inflate(R.layout.fragment_creation_equipe, container, false);
-        /*buttonCreerEquipe = root.findViewById(R.id.buttonCréerEquipe1);
-        buttonCreerEquipe.setOnClickListener(this);*/
-        String [] menuItems={"Équipe 1",
-                "Équipe 2",
-                "Équipe 3",
-                "Équipe 4",
-                "Équipe 5",
-                "Équipe 6"
-        };
-        listView=(ListView) root.findViewById(R.id.ListTeam);
+        String [] menuItems={};
+        listTeam=(ListView) root.findViewById(R.id.ListTeam);
         ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,
                 menuItems
         );
-        listView.setAdapter(listViewAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listTeam.setAdapter(listViewAdapter);
+        listTeam.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                MainActivity main = (MainActivity) getActivity();
                 if (position==0){
                     Toast.makeText(getActivity(),"first team", Toast.LENGTH_SHORT).show();
+                    main.displayScreen(IdScreen.FRAGMENT_VOTE);
                 }
                 else if (position ==1){
                     Toast.makeText(getActivity(),"second team", Toast.LENGTH_SHORT).show();
+                    main.displayScreen(IdScreen.FRAGMENT_VOTE);
                 }
                 else if (position ==2){
                     Toast.makeText(getActivity(),"third team", Toast.LENGTH_SHORT).show();
@@ -113,16 +92,4 @@ public class JoindreEquipe extends Fragment implements View.OnClickListener{
         return root;
     }
 
-    @Override
-    public void onClick(View v) {
-        MainActivity main = (MainActivity) getActivity();
-        switch (v.getId()) {
-           /* case R.id.buttonCréerEquipe1:
-                main.displayScreen(IdScreen.FRAGMENT_CREATION_EQUIPE);
-                Log.d("TAG","SECONDE ENTREE");
-                break;*/
-            default:
-                break;
-        }
-    }
 }

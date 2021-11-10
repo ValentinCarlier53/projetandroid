@@ -40,27 +40,19 @@ public class TeamMemberMenu extends Fragment {
 
         root = inflater.inflate(R.layout.fragment_team_member_menu, container, false);
         db.collection("Team").get()
-
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-
                         String [] menuItems = new String[ queryDocumentSnapshots.getDocuments().size()] ;
-
                         if (!queryDocumentSnapshots.isEmpty()) {
-
                             List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-
-
 
                             for (int i=0; i<list.size();i++) {
                                 menuItems[i]= list.get(i).get("Nom").toString();
 
 
                             }
-
-
-
                         }
                         listView=(ListView) root.findViewById(R.id.ListTeam);
 

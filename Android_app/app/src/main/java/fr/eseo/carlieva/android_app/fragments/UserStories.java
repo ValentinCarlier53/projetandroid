@@ -44,32 +44,16 @@ public class UserStories extends Fragment {
         listUserStory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                MainActivity main = (MainActivity) getActivity();
                 if (position == 0) {
                     Toast.makeText(getActivity(), "us1", Toast.LENGTH_SHORT).show();
+                    main.displayScreen(IdScreen.FRAGMENT_VOTE);
                 } else if (position == 1) {
                     Toast.makeText(getActivity(), "us2", Toast.LENGTH_SHORT).show();
+                    main.displayScreen(IdScreen.FRAGMENT_VOTE);
                 }
             }
         });
         return root;
     }
-/*
-    @Override
-    public void onClick(View v) {
-        MainActivity main = (MainActivity) getActivity();
-        switch (v.getId()) {
-            case R.id.buttonUs1:
-                Toast.makeText(getActivity(), "first team", Toast.LENGTH_SHORT).show();
-                main.displayScreen(IdScreen.FRAGMENT_VOTE);
-                break;
-            case R.id.buttonTeamMember:
-                Toast.makeText(getActivity(), "second team", Toast.LENGTH_SHORT).show();
-                //main.displayScreen(IdScreen.FRAGMENT_TEAM_MEMBER_MENU);
-                break;
-            default:
-                break;
-        }
-
-    }
-*/
 }

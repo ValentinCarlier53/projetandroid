@@ -6,7 +6,7 @@
     android:id="@+id/ChoisirUneEquipe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.FragmentChoisirEquipe">
+    tools:context=".fragments.FragmentCreationEquipe">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
