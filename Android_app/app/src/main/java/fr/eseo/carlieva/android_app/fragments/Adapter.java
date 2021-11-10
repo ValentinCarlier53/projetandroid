@@ -1,9 +1,10 @@
-package fr.eseo.carlieva.android_app;
+package fr.eseo.carlieva.android_app.fragments;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.AdapterView;
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,12 +12,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import java.util.Random;
 
-public class Adapter<L> extends RecyclerView.Adapter<RecyclerViewHolder> {
-    private Random random;
-    List<ListName>names;
+import fr.eseo.carlieva.android_app.R;
 
-    public Adapter(List<ListName> names){
+public class Adapter<L> extends RecyclerView.Adapter<RecyclerViewHolder> {
+    List<ListName>names;
+    private AdapterView.OnItemClickListener onItemClickListener;
+
+    public interface OnItemClickListener {
+        public void onItemClick(int position);
+    }
+
+    public Adapter(List<ListName> names,OnItemClickListener onItemClickListener){
         this.names=names;
+        this.onItemClickListener= (AdapterView.OnItemClickListener) onItemClickListener;
     }
 
     @Override
@@ -29,7 +37,7 @@ public class Adapter<L> extends RecyclerView.Adapter<RecyclerViewHolder> {
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
-        return new RecyclerViewHolder(view);
+        return new RecyclerViewHolder(view, (OnItemClickListener) onItemClickListener);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package fr.eseo.carlieva.android_app;
+package fr.eseo.carlieva.android_app.fragments;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -8,7 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
-import static android.content.ContentValues.TAG;
+import fr.eseo.carlieva.android_app.R;
 
 public class MainActivity extends AppCompatActivity {
     NavController navController;
@@ -55,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case FRAGMENT_CHOISIR_EQUIPE:
                 navController.navigate(R.id.action_ScrumMasterMenu_to_fragment_choisir_equipe);
+                break;
+            case FRAGMENT_USER_STORIES:
+                navController.navigate(R.id.action_fragmentTeamMemberMenu_to_userStories);
+                break;
+            case FRAGMENT_VOTE:
+                navController.navigate(R.id.action_userStories_to_voteStories2);
                 break;
             default:
                 break;

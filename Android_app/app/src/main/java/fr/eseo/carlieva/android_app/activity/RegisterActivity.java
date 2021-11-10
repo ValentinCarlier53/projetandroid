@@ -1,9 +1,8 @@
-package fr.eseo.carlieva.android_app;
+package fr.eseo.carlieva.android_app.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,6 +21,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+
+import fr.eseo.carlieva.android_app.R;
+import fr.eseo.carlieva.android_app.fragments.MainActivity;
 
 public class RegisterActivity extends AppCompatActivity {
 
