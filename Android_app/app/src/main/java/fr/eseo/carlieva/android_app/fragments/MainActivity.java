@@ -59,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
             case FRAGMENT_USER_STORIES:
                 navController.navigate(R.id.action_fragmentTeamMemberMenu_to_userStories);
                 break;
+            case FRAGMENT_LANCER_VOTE:
+                navController.navigate(R.id.action_fragmentCreationEquipe_to_fragmentLancerVote);
+                break;
             case FRAGMENT_VOTE:
                 navController.navigate(R.id.action_userStories_to_voteStories2);
                 break;

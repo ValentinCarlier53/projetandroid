@@ -37,14 +37,17 @@
         android:id="@+id/fragmentCreationEquipe"
         android:name="fr.eseo.carlieva.android_app.fragments.fragmentChoisirEquipe"
         android:label="fragment_creation_equipe"
-        tools:layout="@layout/fragment_creation_equipe" >
+        tools:layout="@layout/fragment_choisir_equipe" >
+        <action
+            android:id="@+id/action_fragmentCreationEquipe_to_fragmentLancerVote"
+            app:destination="@id/fragmentLancerVote" />
     </fragment>
 
     <fragment
         android:id="@+id/ChoisirUneEquipe"
         android:name="fr.eseo.carlieva.android_app.fragments.FragmentCreationEquipe"
         android:label="fragment_choisir_une_equipe"
-        tools:layout="@layout/fragment_choisir_equipe" >
+        tools:layout="@layout/fragment_choisir_equipe2" >
     </fragment>
 
     <fragment
@@ -69,5 +72,10 @@
         android:id="@+id/voteStories2"
         android:name="fr.eseo.carlieva.android_app.fragments.VoteStories"
         android:label="VoteStories" />
+    <fragment
+        android:id="@+id/fragmentLancerVote"
+        android:name="fr.eseo.carlieva.android_app.fragments.FragmentLancerVote"
+        android:label="fragment_lancer_vote"
+        tools:layout="@layout/fragment_lancer_vote" />
 
 </navigation>
