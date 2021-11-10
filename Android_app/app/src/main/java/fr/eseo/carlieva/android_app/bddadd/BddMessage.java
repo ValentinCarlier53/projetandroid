@@ -24,7 +24,7 @@ public class BddMessage extends AppCompatActivity {
         setContentView(R.layout.fragment_scrum_master_menu);
         Map<String, Object> message = new HashMap<>();
         message.put("Text", "Hello2");
-        message.put("Mail", "v.carlier610@laposte.net");
+        message.put("Mail", "v.carlier610@laposte.fr");
         message.put("Hour", Timestamp.now());
 
         db.collection("Message")
