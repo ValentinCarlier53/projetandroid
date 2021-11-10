@@ -7,24 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".fragments.UserStories">
 
-
-    <Button
-        android:id="@+id/buttonUs2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="228dp"
-        android:text="US2"
+    <ListView
+        android:id="@+id/ListUserStory"
+        android:layout_width="292dp"
+        android:layout_height="555dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/buttonUs1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="US1"
-        app:layout_constraintBottom_toTopOf="@+id/buttonUs2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

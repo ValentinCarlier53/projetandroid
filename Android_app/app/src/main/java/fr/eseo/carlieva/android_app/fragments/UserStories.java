@@ -4,18 +4,23 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import fr.eseo.carlieva.android_app.R;
-public class UserStories extends Fragment implements View.OnClickListener {
+public class UserStories extends Fragment {
     public UserStories() {
     }
-    private Button buttonUs1;
-    private Button buttonUs2;
+    ListView listUserStory;
+    private View root;
+
 
 
     @Override
@@ -24,13 +29,22 @@ public class UserStories extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
 
         View root = inflater.inflate(R.layout.fragment_user_stories, container, false);
-        buttonUs1 = root.findViewById(R.id.buttonUs1);
-        buttonUs1.setOnClickListener(this);
-        buttonUs2 = root.findViewById(R.id.buttonUs2);
-        buttonUs2.setOnClickListener(this);
+
+        String [] userStoryItems = {"us 1", "us 2","us 3"};
+        listUserStory=(ListView) root.findViewById(R.id.ListUserStory);
+
+        ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                userStoryItems
+        );
+
+        listUserStory.setAdapter(listViewAdapter);
+        // Log.d(TAG,menuItems[0]);
+        //listUserStory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         return root;
     }
-
+/*
     @Override
     public void onClick(View v) {
         MainActivity main = (MainActivity) getActivity();
@@ -48,4 +62,5 @@ public class UserStories extends Fragment implements View.OnClickListener {
         }
 
     }
+*/
 }

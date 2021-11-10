@@ -25,13 +25,7 @@ import java.util.List;
 import fr.eseo.carlieva.android_app.R;
 import fr.eseo.carlieva.android_app.pojo.Message;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TeamMemberMenu#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class TeamMemberMenu extends Fragment {
-
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";
     ListView listView;
