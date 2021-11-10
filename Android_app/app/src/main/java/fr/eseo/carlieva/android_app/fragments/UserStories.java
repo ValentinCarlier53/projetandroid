@@ -19,7 +19,7 @@ public class UserStories extends Fragment {
     public UserStories() {
     }
     ListView listUserStory;
-    private View root;
+
 
 
 
@@ -41,7 +41,16 @@ public class UserStories extends Fragment {
 
         listUserStory.setAdapter(listViewAdapter);
         // Log.d(TAG,menuItems[0]);
-        //listUserStory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listUserStory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Toast.makeText(getActivity(), "us1", Toast.LENGTH_SHORT).show();
+                } else if (position == 1) {
+                    Toast.makeText(getActivity(), "us2", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         return root;
     }
 /*
