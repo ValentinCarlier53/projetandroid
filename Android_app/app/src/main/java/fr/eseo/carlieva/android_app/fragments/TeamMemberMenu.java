@@ -35,6 +35,11 @@ public class TeamMemberMenu extends Fragment {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";
     ListView listView;
+    static String[] suffixes =
+            {    "1st",  "2nd",  "3rd",  "4th",  "5th",  "6th",  "7th",  "8th",  "9th",
+                    "10th", "11th", "12th", "13th", "14th", "15th", "16th", "17th", "18th", "19th",
+                    "20th", "21st", "22nd", "23rd", "24th", "25th", "26th", "27th", "28th", "29th",
+                    "30th", "31st" };
 
 
 
@@ -88,25 +93,9 @@ public class TeamMemberMenu extends Fragment {
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 Log.d(TAG,"passage2");
                                 MainActivity main = (MainActivity) getActivity();
-                                if (position==0){
-                                    Toast.makeText(getActivity(),"first team", Toast.LENGTH_SHORT).show();
+
+                                    Toast.makeText(getActivity(),suffixes [position] +" team", Toast.LENGTH_SHORT).show();
                                     main.displayScreen(IdScreen.FRAGMENT_USER_STORIES);
-                                }
-                                else if (position ==1){
-                                    Toast.makeText(getActivity(),"second team", Toast.LENGTH_SHORT).show();
-                                }
-                                else if (position ==2){
-                                    Toast.makeText(getActivity(),"third team", Toast.LENGTH_SHORT).show();
-                                }
-                                else if (position ==3){
-                                    Toast.makeText(getActivity(),"fourth team", Toast.LENGTH_SHORT).show();
-                                }
-                                else if (position ==4){
-                                    Toast.makeText(getActivity(),"fifth team", Toast.LENGTH_SHORT).show();
-                                }
-                                else if (position ==5){
-                                    Toast.makeText(getActivity(),"sixth team", Toast.LENGTH_SHORT).show();
-                                }
 
                             }
                         });
