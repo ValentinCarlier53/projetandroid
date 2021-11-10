@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_app">
 
-        <activity android:name=".bddget.GetTeamUsers">
+        <activity android:name=".activity.StartActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
