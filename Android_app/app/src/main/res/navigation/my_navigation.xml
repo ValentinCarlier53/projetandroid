@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_fragmentCreationEquipe_to_fragmentLancerVote"
             app:destination="@id/fragmentLancerVote" />
+        <action
+            android:id="@+id/action_fragmentCreationEquipe_to_fragmentAjouterEquipe"
+            app:destination="@id/fragmentAjouterEquipe" />
     </fragment>
 
     <fragment
@@ -77,5 +80,10 @@
         android:name="fr.eseo.carlieva.android_app.fragments.FragmentLancerVote"
         android:label="fragment_lancer_vote"
         tools:layout="@layout/fragment_lancer_vote" />
+    <fragment
+        android:id="@+id/fragmentAjouterEquipe"
+        android:name="fr.eseo.carlieva.android_app.fragments.FragmentAjouterEquipe"
+        android:label="fragment_ajouter_equipe"
+        tools:layout="@layout/fragment_ajouter_equipe" />
 
 </navigation>

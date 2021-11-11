@@ -29,9 +29,10 @@ import fr.eseo.carlieva.android_app.R;
  * create an instance of this fragment.
  */
 
-public class fragmentChoisirEquipe extends Fragment {
+public class fragmentChoisirEquipe extends Fragment  implements View.OnClickListener {
     public fragmentChoisirEquipe() {
     }
+
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";
@@ -50,9 +51,13 @@ public class fragmentChoisirEquipe extends Fragment {
                              Bundle savedInstanceState) {
 
         root = inflater.inflate(R.layout.fragment_choisir_equipe, container, false);
+        buttonAjouterEquipe = root.findViewById(R.id.buttonAjouterEquipe);
+        buttonAjouterEquipe.setOnClickListener((View.OnClickListener) this);
+
+
+
         db.collection("Team").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                         String[] menuItems = new String[queryDocumentSnapshots.getDocuments().size()];
@@ -76,6 +81,7 @@ public class fragmentChoisirEquipe extends Fragment {
 
                         listTeam.setAdapter(listViewAdapter);
                         Log.d(TAG, menuItems[0]);
+
                         listTeam.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                             @Override
@@ -91,5 +97,18 @@ public class fragmentChoisirEquipe extends Fragment {
 
         return root;
     }
+
+            @Override
+            public void onClick(View root) {
+                MainActivity main = (MainActivity) getActivity();
+                switch (root.getId()) {
+                    case R.id.buttonAjouterEquipe:
+                        main.displayScreen(IdScreen.FRAGMENT_AJOUTER_EQUIPE);
+                        Log.d("TAG","SECONDE ENTREE");
+                        break;
+                    default:
+                        break;
+                }
+            }
 }
 
