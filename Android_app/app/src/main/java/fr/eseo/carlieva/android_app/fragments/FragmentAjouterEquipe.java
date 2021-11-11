@@ -11,6 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import fr.eseo.carlieva.android_app.R;
 
 public class FragmentAjouterEquipe extends Fragment implements View.OnClickListener{
@@ -20,6 +26,7 @@ public class FragmentAjouterEquipe extends Fragment implements View.OnClickListe
     private Button buttonCreerEquipe;
     private EditText equipe;
     private View root;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,8 +43,15 @@ public class FragmentAjouterEquipe extends Fragment implements View.OnClickListe
         equipe=root.findViewById(R.id.Membre);
         switch (v.getId()) {
             case R.id.CreerMembre:
-                String equipeCreee=equipe.getText().toString();
-                Toast.makeText(getActivity()," Nouvelle équipe créée : "+equipeCreee, Toast.LENGTH_SHORT).show();
+                Map<String, Object> team = new HashMap<>();
+
+                team.put("Nom", equipe.getText().toString());
+                team.put("Users", FieldValue.arrayUnion());
+                team.put("us", FieldValue.arrayUnion());
+
+                db.collection("Team")
+                        .add(team);
+                Toast.makeText(getActivity()," Nouvelle équipe créée : ", Toast.LENGTH_SHORT).show();
 
                 break;
             default:
