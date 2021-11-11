@@ -9,23 +9,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import fr.eseo.carlieva.android_app.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentLancerVote#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class FragmentLancerVote extends Fragment {
+public class FragmentLancerVote extends Fragment implements View.OnClickListener {
 
     public FragmentLancerVote() {
         // Required empty public constructor
     }
     ListView listUserStoryVote;
-
+    private Button buttonAjouterMembre;
 
 
 
@@ -34,10 +30,12 @@ public class FragmentLancerVote extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View root = inflater.inflate(R.layout.fragment_user_stories, container, false);
+        View root = inflater.inflate(R.layout.fragment_lancer_vote, container, false);
 
         String [] userStoryItems = {"lancer vote us 1", "lancer vote us 2","lancer vote us 3"};
         listUserStoryVote=(ListView) root.findViewById(R.id.ListUserStory);
+        buttonAjouterMembre = root.findViewById(R.id.buttonAjouterMembre);
+        buttonAjouterMembre.setOnClickListener((View.OnClickListener) this);
 
         ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
                 getActivity(),
@@ -61,5 +59,16 @@ public class FragmentLancerVote extends Fragment {
             }
         });
         return root;
+    }
+    @Override
+    public void onClick(View root) {
+        MainActivity main = (MainActivity) getActivity();
+        switch (root.getId()) {
+            case R.id.buttonAjouterMembre:
+                main.displayScreen(IdScreen.FRAGMENT_AJOUTER_MEMBRE);
+                break;
+            default:
+                break;
+        }
     }
 }
