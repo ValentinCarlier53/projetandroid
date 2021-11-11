@@ -14,11 +14,11 @@ import fr.eseo.carlieva.android_app.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ScrumMasterMenu#newInstance} factory method to
+ * Use the {@link FragmentScrumMasterMenu#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ScrumMasterMenu extends Fragment implements View.OnClickListener {
-    public ScrumMasterMenu() {
+public class FragmentScrumMasterMenu extends Fragment implements View.OnClickListener {
+    public FragmentScrumMasterMenu() {
     }
 
     private View root;

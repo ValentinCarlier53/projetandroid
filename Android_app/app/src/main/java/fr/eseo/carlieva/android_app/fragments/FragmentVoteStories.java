@@ -11,8 +11,8 @@ import androidx.fragment.app.Fragment;
 
 import fr.eseo.carlieva.android_app.R;
 
-public class VoteStories extends Fragment implements View.OnClickListener {
-    public VoteStories() {
+public class FragmentVoteStories extends Fragment implements View.OnClickListener {
+    public FragmentVoteStories() {
     }
     private View root;
 

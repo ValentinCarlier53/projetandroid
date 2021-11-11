@@ -25,8 +25,8 @@ import java.util.List;
 import fr.eseo.carlieva.android_app.R;
 import fr.eseo.carlieva.android_app.pojo.Message;
 
-public class TeamMemberMenu extends Fragment {
-    public TeamMemberMenu() {
+public class FragmentTeamMemberMenu extends Fragment {
+    public FragmentTeamMemberMenu() {
     }
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();

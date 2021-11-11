@@ -33,6 +33,11 @@ public class UserStories extends Fragment {
     private static final String TAG = "DocSnippets";
 
 
+public class FragmentUserStories extends Fragment implements View.OnClickListener{
+    public FragmentUserStories() {
+    }
+    private ListView listUserStory;
+    private Button buttonAjouterMembre;
 
 
 
@@ -59,6 +64,13 @@ public class UserStories extends Fragment {
                         userStoryItems[i] = group.get(i).toString();
                     }
 
+        buttonAjouterMembre = root.findViewById(R.id.buttonCréerEquipe);
+        buttonAjouterMembre.setOnClickListener((View.OnClickListener) this);
+        ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                userStoryItems
+        );
 
                 }
                           listUserStory=(ListView) root.findViewById(R.id.ListUserStory);
@@ -91,5 +103,17 @@ public class UserStories extends Fragment {
 
 
         return root;
+    }
+
+    @Override
+    public void onClick(View root) {
+        MainActivity main = (MainActivity) getActivity();
+        switch (root.getId()) {
+            case R.id.buttonAjouterMembre:
+                main.displayScreen(IdScreen.FRAGMENT_AJOUTER_MEMBRE);
+                break;
+            default:
+                break;
+        }
     }
 }
