@@ -15,11 +15,11 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import fr.eseo.carlieva.android_app.R;
-public class UserStories extends Fragment {
-    public UserStories() {
+public class FragmentUserStories extends Fragment implements View.OnClickListener{
+    public FragmentUserStories() {
     }
-    ListView listUserStory;
-
+    private ListView listUserStory;
+    private Button buttonAjouterMembre;
 
 
 
@@ -33,6 +33,8 @@ public class UserStories extends Fragment {
         String [] userStoryItems = {"us 1", "us 2","us 3"};
         listUserStory=(ListView) root.findViewById(R.id.ListUserStory);
 
+        buttonAjouterMembre = root.findViewById(R.id.buttonCréerEquipe);
+        buttonAjouterMembre.setOnClickListener((View.OnClickListener) this);
         ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,
@@ -55,5 +57,17 @@ public class UserStories extends Fragment {
             }
         });
         return root;
+    }
+
+    @Override
+    public void onClick(View root) {
+        MainActivity main = (MainActivity) getActivity();
+        switch (root.getId()) {
+            case R.id.buttonAjouterMembre:
+                main.displayScreen(IdScreen.FRAGMENT_AJOUTER_MEMBRE);
+                break;
+            default:
+                break;
+        }
     }
 }

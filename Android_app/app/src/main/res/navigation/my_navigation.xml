@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/fragmentScrumMasterMenu"
-        android:name="fr.eseo.carlieva.android_app.fragments.ScrumMasterMenu"
+        android:name="fr.eseo.carlieva.android_app.fragments.FragmentScrumMasterMenu"
         android:label="fragment_scrum_master_menu"
         tools:layout="@layout/fragment_scrum_master_menu" >
 
@@ -55,7 +55,7 @@
 
     <fragment
         android:id="@+id/fragmentTeamMemberMenu"
-        android:name="fr.eseo.carlieva.android_app.fragments.TeamMemberMenu"
+        android:name="fr.eseo.carlieva.android_app.fragments.FragmentTeamMemberMenu"
         android:label="fragment_team_member_menu"
         tools:layout="@layout/fragment_team_member_menu" >
         <action
@@ -64,7 +64,7 @@
     </fragment>
     <fragment
         android:id="@+id/userStories"
-        android:name="fr.eseo.carlieva.android_app.fragments.UserStories"
+        android:name="fr.eseo.carlieva.android_app.fragments.FragmentUserStories"
         android:label="fragment_user_stories"
         tools:layout="@layout/fragment_user_stories" >
         <action
@@ -73,17 +73,26 @@
     </fragment>
     <fragment
         android:id="@+id/voteStories2"
-        android:name="fr.eseo.carlieva.android_app.fragments.VoteStories"
+        android:name="fr.eseo.carlieva.android_app.fragments.FragmentVoteStories"
         android:label="VoteStories" />
     <fragment
         android:id="@+id/fragmentLancerVote"
         android:name="fr.eseo.carlieva.android_app.fragments.FragmentLancerVote"
         android:label="fragment_lancer_vote"
-        tools:layout="@layout/fragment_lancer_vote" />
+        tools:layout="@layout/fragment_lancer_vote" >
+        <action
+            android:id="@+id/action_fragmentLancerVote_to_fragmentAjouterMembre"
+            app:destination="@id/fragmentAjouterMembre" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentAjouterEquipe"
         android:name="fr.eseo.carlieva.android_app.fragments.FragmentAjouterEquipe"
         android:label="fragment_ajouter_equipe"
         tools:layout="@layout/fragment_ajouter_equipe" />
+    <fragment
+        android:id="@+id/fragmentAjouterMembre"
+        android:name="fr.eseo.carlieva.android_app.FragmentAjouterMembre"
+        android:label="fragment_ajouter_membre"
+        tools:layout="@layout/fragment_ajouter_membre" />
 
 </navigation>

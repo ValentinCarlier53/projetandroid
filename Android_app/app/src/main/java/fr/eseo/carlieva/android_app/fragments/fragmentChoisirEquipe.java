@@ -36,8 +36,9 @@ public class fragmentChoisirEquipe extends Fragment  implements View.OnClickList
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";
-    ListView listTeam;
-    Button buttonAjouterEquipe;
+    private ListView listTeam;
+    private Button buttonAjouterEquipe;
+
     static String[] suffixes =
             {"1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th",
                     "10th", "11th", "12th", "13th", "14th", "15th", "16th", "17th", "18th", "19th",

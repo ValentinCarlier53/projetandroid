@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.FragmentAjouterEquipe">
+    tools:context=".FragmentAjouterMembre">
 
     <EditText
         android:id="@+id/Membre"
@@ -13,7 +13,7 @@
         android:layout_marginTop="184dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Equipe"
+        android:text="Membre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         android:id="@+id/CreerMembre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Créer la nouvelle équipe"
+        android:text="Créer le nouveau membre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
