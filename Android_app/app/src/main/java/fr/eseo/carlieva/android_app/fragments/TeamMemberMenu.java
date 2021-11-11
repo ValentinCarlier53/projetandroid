@@ -80,8 +80,8 @@ public class TeamMemberMenu extends Fragment {
                                 Log.d(TAG,"passage2");
                                 MainActivity main = (MainActivity) getActivity();
 
-                                    Toast.makeText(getActivity(),suffixes [position] +" team", Toast.LENGTH_SHORT).show();
-                                    main.displayScreen(IdScreen.FRAGMENT_USER_STORIES);
+                                    Toast.makeText(getActivity(),menuItems[position], Toast.LENGTH_SHORT).show();
+                                    main.displayScreen2(IdScreen.FRAGMENT_USER_STORIES, menuItems[position]);
 
                             }
                         });

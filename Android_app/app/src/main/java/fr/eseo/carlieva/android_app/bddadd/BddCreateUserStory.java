@@ -23,14 +23,13 @@ public class BddCreateUserStory extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_scrum_master_menu);
-        Map<String, Object> team = new HashMap<>();
+        Map<String, Object> us = new HashMap<>();
 
-        team.put("Nom", "md");
-        team.put("Votes", FieldValue.arrayUnion());
-        team.put("Note", 0);
+        us.put("Nom", "En tant que lead");
+        us.put("Votes", FieldValue.arrayUnion());
+        us.put("Note", 0);
 
-        db.collection("UserStory")
-                .add(team);
+        db.collection("UserStory").document("En tant que lead").set(us);
 
 
 

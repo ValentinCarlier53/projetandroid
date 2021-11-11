@@ -12,6 +12,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.List;
+
 import fr.eseo.carlieva.android_app.R;
 
 /**
@@ -25,6 +32,7 @@ public class FragmentLancerVote extends Fragment {
         // Required empty public constructor
     }
     ListView listUserStoryVote;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
 
@@ -36,7 +44,23 @@ public class FragmentLancerVote extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_user_stories, container, false);
 
-        String [] userStoryItems = {"lancer vote us 1", "lancer vote us 2","lancer vote us 3"};
+        db.collection("UserStory").get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        String[] userStoryItems = new String[queryDocumentSnapshots.getDocuments().size()];
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+
+                            for (int i = 0; i < list.size(); i++) {
+                                userStoryItems[i] = "lancer vote "+ list.get(i).get("Nom").toString();
+
+
+                            }
+                        }
+
+
         listUserStoryVote=(ListView) root.findViewById(R.id.ListUserStory);
 
         ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
@@ -58,8 +82,11 @@ public class FragmentLancerVote extends Fragment {
                     Toast.makeText(getActivity(), "lancement vote us2", Toast.LENGTH_SHORT).show();
                     //to do mettre le bouleen du lancement su vote à true ;
                 }
+
             }
         });
+    }
+});
         return root;
     }
 }

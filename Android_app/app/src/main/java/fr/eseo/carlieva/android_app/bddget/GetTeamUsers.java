@@ -26,8 +26,7 @@ public class GetTeamUsers  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.get_data_message);
 
-        DocumentReference docRef = db.collection("Team").document("EQYH4MW4HEyAJZZv6sA7");
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        db.collection("Team").document("jj").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {

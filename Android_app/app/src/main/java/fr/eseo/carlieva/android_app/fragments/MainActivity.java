@@ -70,4 +70,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void displayScreen2(IdScreen idScreen,  String parameterValue) {
+        switch (idScreen) {
+            case FRAGMENT_USER_STORIES:
+                Bundle bundle = new Bundle();
+                bundle.putString("arg",parameterValue);
+                navController.navigate(R.id.action_fragmentTeamMemberMenu_to_userStories,bundle);
+
+
+        }
+
+    }
+
+
 }
