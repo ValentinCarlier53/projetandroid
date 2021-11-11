@@ -7,9 +7,11 @@
         <entry key="app/src/main/res/layout/activity_firebase_ui.xml" value="0.23072916666666668" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.23072916666666668" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23072916666666668" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.23509182374270762" />
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.23072916666666668" />
         <entry key="app/src/main/res/layout/fragment_choisir_equipe.xml" value="0.2535410764872521" />
+        <entry key="app/src/main/res/layout/fragment_choisir_equipe2.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_choix_resp.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_creation_equipe.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.1" />

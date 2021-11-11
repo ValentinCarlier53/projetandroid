@@ -26,6 +26,9 @@ import fr.eseo.carlieva.android_app.R;
 import fr.eseo.carlieva.android_app.pojo.Message;
 
 public class TeamMemberMenu extends Fragment {
+    public TeamMemberMenu() {
+    }
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";
     ListView listView;
@@ -35,11 +38,6 @@ public class TeamMemberMenu extends Fragment {
                     "20th", "21st", "22nd", "23rd", "24th", "25th", "26th", "27th", "28th", "29th",
                     "30th", "31st" };
 
-
-
-    public TeamMemberMenu() {
-    }
-
     private View root;
 
     @Override
@@ -47,6 +45,8 @@ public class TeamMemberMenu extends Fragment {
                              Bundle savedInstanceState) {
 
         root = inflater.inflate(R.layout.fragment_team_member_menu, container, false);
+
+
         db.collection("Team").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
 

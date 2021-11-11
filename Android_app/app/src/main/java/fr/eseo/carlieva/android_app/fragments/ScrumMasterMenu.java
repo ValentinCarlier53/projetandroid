@@ -30,10 +30,6 @@ public class ScrumMasterMenu extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_scrum_master_menu, container, false);
-        //ListView listView=(ListView) findViewById(R.id.ListView);
-        //ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.Layout.simple,noms);
-        //listView.setAdapter(adapter);
-        //listView.setOnClickListener(new AdapterView.onItemClickListener());
         buttonCreerEquipe = root.findViewById(R.id.buttonCréerEquipe);
         buttonCreerEquipe.setOnClickListener(this);
         buttonChoisirUneEquipe= root.findViewById(R.id.buttonChoisirUneEquipe);
