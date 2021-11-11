@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,13 +25,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.List;
 
 import fr.eseo.carlieva.android_app.R;
-public class UserStories extends Fragment {
 
 
 
-    ListView listUserStory;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private static final String TAG = "DocSnippets";
+
 
 
 public class FragmentUserStories extends Fragment implements View.OnClickListener{
@@ -38,7 +36,8 @@ public class FragmentUserStories extends Fragment implements View.OnClickListene
     }
     private ListView listUserStory;
     private Button buttonAjouterMembre;
-
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private static final String TAG = "DocSnippets";
 
 
     @Override
@@ -60,44 +59,44 @@ public class FragmentUserStories extends Fragment implements View.OnClickListene
                 if (task.isSuccessful()) {
 
 
-                    for(int i=0;i<group.size();i++){
+                    for (int i = 0; i < group.size(); i++) {
                         userStoryItems[i] = group.get(i).toString();
                     }
+                }
+                ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
+                        getActivity(),
+                        android.R.layout.simple_list_item_1,
+                        userStoryItems
+                );
+
+                listUserStory.setAdapter(listViewAdapter);
+
+
+              }
+        });
 
         buttonAjouterMembre = root.findViewById(R.id.buttonCréerEquipe);
         buttonAjouterMembre.setOnClickListener((View.OnClickListener) this);
-        ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
-                getActivity(),
-                android.R.layout.simple_list_item_1,
-                userStoryItems
-        );
 
+
+
+        listUserStory=(ListView) root.findViewById(R.id.ListUserStory);
+
+
+        // Log.d(TAG,menuItems[0]);
+        listUserStory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                MainActivity main = (MainActivity) getActivity();
+                if (position == 0) {
+                    Toast.makeText(getActivity(), "us1", Toast.LENGTH_SHORT).show();
+                    main.displayScreen(IdScreen.FRAGMENT_VOTE);
+                } else if (position == 1) {
+                    Toast.makeText(getActivity(), "us2", Toast.LENGTH_SHORT).show();
+                    main.displayScreen(IdScreen.FRAGMENT_VOTE);
                 }
-                          listUserStory=(ListView) root.findViewById(R.id.ListUserStory);
-
-                          ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
-                                  getActivity(),
-                                  android.R.layout.simple_list_item_1,
-                                  userStoryItems
-                          );
-
-                          listUserStory.setAdapter(listViewAdapter);
-                          // Log.d(TAG,menuItems[0]);
-                          listUserStory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                              @Override
-                              public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                  MainActivity main = (MainActivity) getActivity();
-                                  if (position == 0) {
-                                      Toast.makeText(getActivity(), "us1", Toast.LENGTH_SHORT).show();
-                                      main.displayScreen(IdScreen.FRAGMENT_VOTE);
-                                  } else if (position == 1) {
-                                      Toast.makeText(getActivity(), "us2", Toast.LENGTH_SHORT).show();
-                                      main.displayScreen(IdScreen.FRAGMENT_VOTE);
-                                  }
-                              }
-                          });
-                      }
-                });
+            }
+        });
 
 
 
