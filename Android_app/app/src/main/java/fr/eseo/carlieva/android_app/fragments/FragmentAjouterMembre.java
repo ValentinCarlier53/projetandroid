@@ -14,34 +14,38 @@ import android.widget.Toast;
 
 import fr.eseo.carlieva.android_app.R;
 
-public class FragmentAjouterEquipe extends Fragment implements View.OnClickListener{
-    public FragmentAjouterEquipe() {
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link FragmentAjouterMembre#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class FragmentAjouterMembre extends Fragment implements View.OnClickListener{
+    public FragmentAjouterMembre() {
         // Required empty public constructor
     }
-
-    private Button buttonCreerEquipe;
-    private EditText equipe;
+    private Button buttonCreerMembre;
+    private EditText membre;
     private View root;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        root = inflater.inflate(R.layout.fragment_ajouter_equipe, container, false);
-        buttonCreerEquipe = root.findViewById(R.id.CreerEquipe);
-        buttonCreerEquipe.setOnClickListener((View.OnClickListener) this);
+        root = inflater.inflate(R.layout.fragment_ajouter_membre, container, false);
+        buttonCreerMembre = root.findViewById(R.id.CreerMembre);
+        buttonCreerMembre.setOnClickListener((View.OnClickListener) this);
         return root;
     }
+
     @Override
     public void onClick(View v) {
         MainActivity main = (MainActivity) getActivity();
-        equipe=root.findViewById(R.id.Equipe);
+        membre = root.findViewById(R.id.Membre);
         switch (v.getId()) {
-            case R.id.CreerEquipe:
+            case R.id.CreerMembre:
                 Log.d("Tag","membre");
-                String equipeCreee=equipe.getText().toString();
-                Toast.makeText(getActivity()," Nouvelle équipe créée : "+equipeCreee, Toast.LENGTH_SHORT).show();
-
+                String membreCree = membre.getText().toString();
+                Toast.makeText(getActivity(), " Nouveau Membre créé : " + membreCree, Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;

@@ -82,7 +82,6 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
         switch (root.getId()) {
             case R.id.buttonAjouterMembre:
                 main.displayScreen(IdScreen.FRAGMENT_AJOUTER_MEMBRE);
-                Log.d("TAG","SECONDE ENTREE");
                 break;
             default:
                 break;
