@@ -33,25 +33,18 @@ public class FragmentAjouterEquipe extends Fragment implements View.OnClickListe
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_ajouter_equipe, container, false);
-        buttonCreerEquipe = root.findViewById(R.id.CreerMembre);
+        buttonCreerEquipe = root.findViewById(R.id.CreerEquipe);
         buttonCreerEquipe.setOnClickListener((View.OnClickListener) this);
         return root;
     }
     @Override
     public void onClick(View v) {
         MainActivity main = (MainActivity) getActivity();
-        equipe=root.findViewById(R.id.Membre);
+        equipe=root.findViewById(R.id.Equipe);
         switch (v.getId()) {
-            case R.id.CreerMembre:
-                Map<String, Object> team = new HashMap<>();
-
-                team.put("Nom", equipe.getText().toString());
-                team.put("Users", FieldValue.arrayUnion());
-                team.put("us", FieldValue.arrayUnion());
-
-                db.collection("Team")
-                        .add(team);
-                Toast.makeText(getActivity()," Nouvelle équipe créée : ", Toast.LENGTH_SHORT).show();
+            case R.id.CreerEquipe:
+                String equipeCreee=equipe.getText().toString();
+                Toast.makeText(getActivity()," Nouvelle équipe créée : "+equipeCreee, Toast.LENGTH_SHORT).show();
 
                 break;
             default:

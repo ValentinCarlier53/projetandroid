@@ -104,15 +104,5 @@ public class FragmentUserStories extends Fragment implements View.OnClickListene
         return root;
     }
 
-    @Override
-    public void onClick(View root) {
-        MainActivity main = (MainActivity) getActivity();
-        switch (root.getId()) {
-            case R.id.buttonAjouterMembre:
-                main.displayScreen(IdScreen.FRAGMENT_AJOUTER_MEMBRE);
-                break;
-            default:
-                break;
-        }
-    }
+
 }
