@@ -85,7 +85,6 @@ public class fragmentChoisirEquipe extends Fragment  implements View.OnClickList
 
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                Log.d(TAG, "passage2");
                                 MainActivity main = (MainActivity) getActivity();
                                 Toast.makeText(getActivity(), suffixes[position] + " team", Toast.LENGTH_SHORT).show();
                                 main.displayScreen(IdScreen.FRAGMENT_LANCER_VOTE);
@@ -100,13 +99,9 @@ public class fragmentChoisirEquipe extends Fragment  implements View.OnClickList
             @Override
             public void onClick(View root) {
                 MainActivity main = (MainActivity) getActivity();
-                switch (root.getId()) {
-                    case R.id.buttonAjouterEquipe:
+                if (root.getId() == R.id.buttonAjouterEquipe){
                         main.displayScreen(IdScreen.FRAGMENT_AJOUTER_EQUIPE);
                         Log.d("TAG","SECONDE ENTREE");
-                        break;
-                    default:
-                        break;
                 }
             }
 }

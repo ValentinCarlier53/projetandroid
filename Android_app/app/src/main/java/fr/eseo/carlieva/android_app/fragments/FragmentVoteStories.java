@@ -32,7 +32,6 @@ public class FragmentVoteStories extends Fragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_vote_user_story, container, false);
-
         button1= root.findViewById(R.id.button1);
         //button1.setOnClickListener(this);
         button13 = root.findViewById(R.id.buttonTeamMember);
@@ -47,10 +46,10 @@ public class FragmentVoteStories extends Fragment implements View.OnClickListene
         //MainActivity main = (MainActivity) getActivity();
         switch (v.getId()) {
             case R.id.button1:
-                Toast.makeText(getActivity(),"first team", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"note=1", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button13:
-                Toast.makeText(getActivity(),"first team", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"note=13", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;

@@ -12,26 +12,17 @@ import android.widget.Button;
 
 import fr.eseo.carlieva.android_app.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentScrumMasterMenu#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class FragmentScrumMasterMenu extends Fragment implements View.OnClickListener {
     public FragmentScrumMasterMenu() {
     }
 
     private View root;
-    private Button buttonCreerEquipe;
     private Button buttonChoisirUneEquipe;
-    String noms[]=new String[]{"Valentin","Jean-Baptiste","Lave"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_scrum_master_menu, container, false);
-        buttonCreerEquipe = root.findViewById(R.id.buttonCréerEquipe);
-        buttonCreerEquipe.setOnClickListener(this);
         buttonChoisirUneEquipe= root.findViewById(R.id.buttonChoisirUneEquipe);
         buttonChoisirUneEquipe.setOnClickListener(this);
         return root;
@@ -39,16 +30,8 @@ public class FragmentScrumMasterMenu extends Fragment implements View.OnClickLis
     @Override
     public void onClick(View v) {
         MainActivity main = (MainActivity) getActivity();
-        switch (v.getId()) {
-            case R.id.buttonCréerEquipe:
-                main.displayScreen(IdScreen.FRAGMENT_CHOISIR_EQUIPE);
-                Log.d("TAG","SECONDE ENTREE");
-                break;
-            case R.id.buttonChoisirUneEquipe:
+        if (v.getId() == R.id.buttonChoisirUneEquipe){
                 main.displayScreen(IdScreen.FRAGMENT_CREATION_EQUIPE);
-                break;
-            default:
-                break;
         }
     }
 

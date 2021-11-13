@@ -72,13 +72,11 @@ public class FragmentTeamMemberMenu extends Fragment {
 
 
                         listView.setAdapter(listViewAdapter);
-                        Log.d(TAG,menuItems[0]);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                Log.d(TAG,"passage2");
                                 MainActivity main = (MainActivity) getActivity();
 
                                     Toast.makeText(getActivity(),menuItems[position], Toast.LENGTH_SHORT).show();

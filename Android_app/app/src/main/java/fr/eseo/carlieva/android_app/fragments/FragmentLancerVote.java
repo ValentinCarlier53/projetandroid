@@ -28,10 +28,12 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
     public FragmentLancerVote() {
         // Required empty public constructor
     }
+
     private Button buttonAjouterMembre;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ListView listUserStoryVote;
     private View root;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,7 +65,6 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
                                 userStoryItems
                         );
                         listUserStoryVote.setAdapter(listViewAdapter);
-                        // Log.d(TAG,menuItems[0]);
                         listUserStoryVote.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -82,15 +83,12 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
                 });
         return root;
     }
+    
     @Override
     public void onClick(View root) {
         MainActivity main = (MainActivity) getActivity();
-        switch (root.getId()) {
-            case R.id.buttonAjouterMembre:
+        if (root.getId()==R.id.buttonAjouterMembre){
                 main.displayScreen(IdScreen.FRAGMENT_AJOUTER_MEMBRE);
-                break;
-            default:
-                break;
         }
     }
 }

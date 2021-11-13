@@ -25,10 +25,9 @@ import fr.eseo.carlieva.android_app.R;
 public class FragmentUserStories extends Fragment{
     public FragmentUserStories() {
     }
+
     private ListView listUserStory;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,10 +59,7 @@ public class FragmentUserStories extends Fragment{
         );
 
         listUserStory.setAdapter(listViewAdapter);
-        // Log.d(TAG,menuItems[0]);
         listUserStory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

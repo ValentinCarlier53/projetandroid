@@ -31,6 +31,7 @@ public class FragmentChoixResp extends Fragment implements View.OnClickListener 
 
         buttonScrumMaster = root.findViewById(R.id.buttonScrumMaster);
         buttonScrumMaster.setOnClickListener(this);
+
         buttonTeamMember = root.findViewById(R.id.buttonTeamMember);
         buttonTeamMember.setOnClickListener(this);
 

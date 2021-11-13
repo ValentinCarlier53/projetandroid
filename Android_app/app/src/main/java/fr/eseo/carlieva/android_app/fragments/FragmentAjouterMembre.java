@@ -19,11 +19,7 @@ import java.util.Map;
 
 import fr.eseo.carlieva.android_app.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentAjouterMembre#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class FragmentAjouterMembre extends Fragment implements View.OnClickListener{
     public FragmentAjouterMembre() {
         // Required empty public constructor
@@ -47,18 +43,12 @@ public class FragmentAjouterMembre extends Fragment implements View.OnClickListe
     public void onClick(View v) {
         MainActivity main = (MainActivity) getActivity();
         membre = root.findViewById(R.id.Membre);
-        switch (v.getId()) {
-            case R.id.CreerMembre:
-                Log.d("Tag","membre");
+        if (v.getId()==R.id.CreerMembre){
                 Map<String, Object> user = new HashMap<>();
                 user.put("Nom", membre.getText().toString());
-
                 db.collection("User")
                         .document(membre.getText().toString()).set(user);
                 Toast.makeText(getActivity(), " Nouveau Membre créé : " , Toast.LENGTH_SHORT).show();
-                break;
-            default:
-                break;
         }
     }
 }

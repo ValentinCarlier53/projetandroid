@@ -38,20 +38,13 @@ public class MainActivity extends AppCompatActivity {
     public void displayScreen(IdScreen idScreen) {
         switch (idScreen) {
             case FRAGMENT_SCRUM_MASTER_MENU:
-                Log.d("TAG",navController.getCurrentDestination().toString());
-
                 navController.navigate(R.id.action_fragmentChoixResp_to_ScrumMasterMenu);
-                Log.d("TAG",navController.getCurrentDestination().toString());
-
                 break;
             case FRAGMENT_TEAM_MEMBER_MENU:
                 navController.navigate(R.id.action_fragmentChoixResp_to_TeamMemberMenu);
                 break;
             case FRAGMENT_CREATION_EQUIPE:
-                Log.d("TAG",navController.getCurrentDestination().toString());
                 navController.navigate(R.id.action_ScrumMasterMenu_to_fragment_creation_equipe);
-                Log.d("TAG",navController.getCurrentDestination().toString());
-                Log.d("TAG","entree dans le display ")  ;
                 break;
             case FRAGMENT_CHOISIR_EQUIPE:
                 navController.navigate(R.id.action_ScrumMasterMenu_to_fragment_choisir_equipe);
@@ -65,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
             case FRAGMENT_AJOUTER_MEMBRE:
                 navController.navigate(R.id.action_fragmentLancerVote_to_fragmentAjouterMembre);
                 break;
-
             case FRAGMENT_LANCER_VOTE:
                 navController.navigate(R.id.action_fragmentCreationEquipe_to_fragmentLancerVote);
                 break;
