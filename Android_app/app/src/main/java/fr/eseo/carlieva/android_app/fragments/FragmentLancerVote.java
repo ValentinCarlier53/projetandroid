@@ -13,10 +13,13 @@ import android.widget.ListView;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import fr.eseo.carlieva.android_app.R;
 
@@ -29,7 +32,6 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ListView listUserStoryVote;
     private View root;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -46,12 +48,13 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                         String[] userStoryItems = new String[queryDocumentSnapshots.getDocuments().size()];
+                        List<DocumentSnapshot> list;
                         if (!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                             list = queryDocumentSnapshots.getDocuments();
                             for (int i = 0; i < list.size(); i++) {
                                 userStoryItems[i] = "lancer vote "+ list.get(i).get("Nom").toString();
                             }
-                        }
+
                         listUserStoryVote=(ListView) root.findViewById(R.id.ListUserStoryVote);
 
                         ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
@@ -65,32 +68,18 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 MainActivity main = (MainActivity) getActivity();
-                                if (position == 0) {
-                                    Toast.makeText(getActivity(), "lancement vote us1", Toast.LENGTH_SHORT).show();
-                                    //to do mettre le bouleen du lancement su vote à true ;
-                                } else if (position == 1) {
-                                    Toast.makeText(getActivity(), "lancement vote us2", Toast.LENGTH_SHORT).show();
-                                    //to do mettre le bouleen du lancement su vote à true ;
-                                }
 
-        listUserStoryVote.setAdapter(listViewAdapter);
-        // Log.d(TAG,menuItems[0]);
-        listUserStoryVote.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity main = (MainActivity) getActivity();
-                if (position == 0) {
-                    Toast.makeText(getActivity(), "lancement vote us1", Toast.LENGTH_SHORT).show();
-                    //to do mettre le bouleen du lancement su vote à true ;
-                } else if (position == 1) {
-                    Toast.makeText(getActivity(), "lancement vote us2", Toast.LENGTH_SHORT).show();
-                    //to do mettre le bouleen du lancement su vote à true ;
-                }
+                                    Toast.makeText(getActivity(), "lancement vote us"+position, Toast.LENGTH_SHORT).show();
+                                    Map<String, Object> us = new HashMap<>();
+                                    us.put("votePossible", true);
+                                    list.get(position).getReference().update(us);
 
-            }
-        });
-    }
-});
+                            }
+
+                            });
+                        }
+                    }
+                });
         return root;
     }
     @Override
@@ -105,4 +94,4 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
         }
     }
 }
-                             }
+

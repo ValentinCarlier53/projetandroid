@@ -12,6 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import fr.eseo.carlieva.android_app.R;
 
 /**
@@ -26,6 +31,7 @@ public class FragmentAjouterMembre extends Fragment implements View.OnClickListe
     private Button buttonCreerMembre;
     private EditText membre;
     private View root;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,8 +50,12 @@ public class FragmentAjouterMembre extends Fragment implements View.OnClickListe
         switch (v.getId()) {
             case R.id.CreerMembre:
                 Log.d("Tag","membre");
-                String membreCree = membre.getText().toString();
-                Toast.makeText(getActivity(), " Nouveau Membre créé : " + membreCree, Toast.LENGTH_SHORT).show();
+                Map<String, Object> user = new HashMap<>();
+                user.put("Nom", membre.getText().toString());
+
+                db.collection("User")
+                        .document(membre.getText().toString()).set(user);
+                Toast.makeText(getActivity(), " Nouveau Membre créé : " , Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
