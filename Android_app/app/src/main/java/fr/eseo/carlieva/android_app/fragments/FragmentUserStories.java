@@ -43,12 +43,13 @@ public class FragmentUserStories extends Fragment{
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                         String[] userStoryItems = new String[queryDocumentSnapshots.getDocuments().size()];
+                        List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
                         if (!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+
                             for (int i = 0; i < list.size(); i++) {
                                 userStoryItems[i] = "lancer vote "+ list.get(i).get("Nom").toString();
                             }
-                        }
+
         listUserStory=(ListView) root.findViewById(R.id.ListUserStory);
 
 
@@ -61,22 +62,28 @@ public class FragmentUserStories extends Fragment{
         listUserStory.setAdapter(listViewAdapter);
         // Log.d(TAG,menuItems[0]);
         listUserStory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MainActivity main = (MainActivity) getActivity();
-                if (position == 0) {
-                    Toast.makeText(getActivity(), "us1", Toast.LENGTH_SHORT).show();
-                    main.displayScreen(IdScreen.FRAGMENT_VOTE);
-                } else if (position == 1) {
-                    Toast.makeText(getActivity(), "us2", Toast.LENGTH_SHORT).show();
+                if(list.get(position).get("votePossible").equals(true)){
                     main.displayScreen(IdScreen.FRAGMENT_VOTE);
                 }
+                else{
+                    Toast.makeText(getActivity(),"this us is not opened yet", Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
+                    }
                     }
                 });
         return root;
     }
+
 
 
 }

@@ -75,6 +75,7 @@ public class FragmentTeamMemberMenu extends Fragment {
                         Log.d(TAG,menuItems[0]);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
+
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 Log.d(TAG,"passage2");
