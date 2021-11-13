@@ -32,8 +32,6 @@ import fr.eseo.carlieva.android_app.R;
 public class fragmentChoisirEquipe extends Fragment  implements View.OnClickListener {
     public fragmentChoisirEquipe() {
     }
-
-
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";
     private ListView listTeam;

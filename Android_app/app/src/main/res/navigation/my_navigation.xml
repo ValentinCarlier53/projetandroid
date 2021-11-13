@@ -91,7 +91,7 @@
         tools:layout="@layout/fragment_ajouter_equipe" />
     <fragment
         android:id="@+id/fragmentAjouterMembre"
-        android:name="fr.eseo.carlieva.android_app.FragmentAjouterMembre"
+        android:name="fr.eseo.carlieva.android_app.fragments.FragmentAjouterMembre"
         android:label="fragment_ajouter_membre"
         tools:layout="@layout/fragment_ajouter_membre" />
 

@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class FragmentAjouterEquipe extends Fragment implements View.OnClickListe
     public FragmentAjouterEquipe() {
         // Required empty public constructor
     }
+
     private Button buttonCreerEquipe;
     private EditText equipe;
     private View root;
@@ -33,14 +35,14 @@ public class FragmentAjouterEquipe extends Fragment implements View.OnClickListe
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_ajouter_equipe, container, false);
-        buttonCreerEquipe = root.findViewById(R.id.CreerMembre);
+        buttonCreerEquipe = root.findViewById(R.id.CreerEquipe);
         buttonCreerEquipe.setOnClickListener((View.OnClickListener) this);
         return root;
     }
     @Override
     public void onClick(View v) {
         MainActivity main = (MainActivity) getActivity();
-        equipe=root.findViewById(R.id.Membre);
+        equipe=root.findViewById(R.id.Equipe);
         switch (v.getId()) {
             case R.id.CreerMembre:
                 Map<String, Object> team = new HashMap<>();
@@ -52,6 +54,10 @@ public class FragmentAjouterEquipe extends Fragment implements View.OnClickListe
                 db.collection("Team")
                         .add(team);
                 Toast.makeText(getActivity()," Nouvelle équipe créée : ", Toast.LENGTH_SHORT).show();
+            case R.id.CreerEquipe:
+                Log.d("Tag","membre");
+                String equipeCreee=equipe.getText().toString();
+                Toast.makeText(getActivity()," Nouvelle équipe créée : "+equipeCreee, Toast.LENGTH_SHORT).show();
 
                 break;
             default:

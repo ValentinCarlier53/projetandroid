@@ -75,8 +75,12 @@ public class FragmentUserStories extends Fragment implements View.OnClickListene
               }
         });
 
-        buttonAjouterMembre = root.findViewById(R.id.buttonCréerEquipe);
-        buttonAjouterMembre.setOnClickListener((View.OnClickListener) this);
+
+        ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                userStoryItems
+        );
 
 
 
@@ -104,15 +108,5 @@ public class FragmentUserStories extends Fragment implements View.OnClickListene
         return root;
     }
 
-    @Override
-    public void onClick(View root) {
-        MainActivity main = (MainActivity) getActivity();
-        switch (root.getId()) {
-            case R.id.buttonAjouterMembre:
-                main.displayScreen(IdScreen.FRAGMENT_AJOUTER_MEMBRE);
-                break;
-            default:
-                break;
-        }
-    }
+
 }
