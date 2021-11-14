@@ -28,9 +28,6 @@
         <action
             android:id="@+id/action_ScrumMasterMenu_to_fragment_creation_equipe"
             app:destination="@id/fragmentCreationEquipe" />
-        <action
-            android:id="@+id/action_ScrumMasterMenu_to_fragment_choisir_equipe"
-            app:destination="@id/ChoisirUneEquipe" />
     </fragment>
 
     <fragment
@@ -44,13 +41,6 @@
         <action
             android:id="@+id/action_fragmentCreationEquipe_to_fragmentAjouterEquipe"
             app:destination="@id/fragmentAjouterEquipe" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/ChoisirUneEquipe"
-        android:name="fr.eseo.carlieva.android_app.fragments.FragmentCreationEquipe"
-        android:label="fragment_choisir_une_equipe"
-        tools:layout="@layout/fragment_choisir_equipe2" >
     </fragment>
 
     <fragment
