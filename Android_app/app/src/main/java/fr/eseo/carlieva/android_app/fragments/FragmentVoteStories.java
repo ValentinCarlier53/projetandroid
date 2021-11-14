@@ -91,6 +91,7 @@ public class FragmentVoteStories extends Fragment implements View.OnClickListene
 
     public void addVote( int note){
         Map<String, Object> vote = new HashMap<>();
+        vote.put("Nom",getArgumentTeam()+"-"+getArgumentUs());
         vote.put("User", FieldValue.arrayUnion(FirebaseAuth.getInstance().getCurrentUser().getEmail()));
         vote.put("Note", FieldValue.arrayUnion(note));
         db.collection("Vote").document(getArgumentTeam()+"-"+getArgumentUs()).set(vote);

@@ -43,7 +43,7 @@ public class FragmentVoirResultats extends Fragment {
                             List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
 
                             for (int i = 0; i < list.size(); i++) {
-                                resultsItems[i] = list.get(i).getReference().toString();
+                                resultsItems[i] = list.get(i).get("Nom").toString();
                             }
                             listView=(ListView) root.findViewById(R.id.ListResultats);
 
