@@ -34,7 +34,6 @@ public class fragmentChoisirEquipe extends Fragment  implements View.OnClickList
     public fragmentChoisirEquipe() {
     }
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private static final String TAG = "DocSnippets";
     private ListView listTeam;
     private Button buttonAjouterEquipe;
 
@@ -81,7 +80,6 @@ public class fragmentChoisirEquipe extends Fragment  implements View.OnClickList
 
 
                         listTeam.setAdapter(listViewAdapter);
-                        Log.d(TAG, menuItems[0]);
 
                         listTeam.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 

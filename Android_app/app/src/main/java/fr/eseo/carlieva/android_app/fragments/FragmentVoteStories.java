@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -91,7 +92,14 @@ public class FragmentVoteStories extends Fragment implements View.OnClickListene
         vote.put("Nom",getArgumentTeam()+"-"+getArgumentUs());
         vote.put("User", FieldValue.arrayUnion(FirebaseAuth.getInstance().getCurrentUser().getEmail()));
         vote.put("Note", FieldValue.arrayUnion(note));
-        db.collection("Vote").document(getArgumentTeam()+"-"+getArgumentUs()).set(vote);
+        DocumentReference docRef = db.collection("Vote").document(getArgumentTeam()+"-"+getArgumentUs());
+        if (docRef==null){
+            db.collection("Vote").document(getArgumentTeam()+"-"+getArgumentUs()).set(vote);
+        }
+        else{
+            db.collection("Vote").document(getArgumentTeam()+"-"+getArgumentUs()).update(vote);
+        }
+
     }
 
     @Override

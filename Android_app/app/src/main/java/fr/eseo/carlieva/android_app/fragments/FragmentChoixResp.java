@@ -34,13 +34,9 @@ public class FragmentChoixResp extends Fragment implements View.OnClickListener 
     public FragmentChoixResp() {
     }
 
-
-
-
     private View root;
     private Button buttonScrumMaster;
     private Button buttonTeamMember;
-    private static final String TAG = "DocSnippets";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

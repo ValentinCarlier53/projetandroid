@@ -38,7 +38,6 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ListView listUserStoryVote;
     private View root;
-    private static final String TAG = "DocSnippets";
 
     public String getArgument(){
         Bundle b = getArguments();

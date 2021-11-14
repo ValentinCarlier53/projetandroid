@@ -83,7 +83,7 @@ public class FragmentUserStories extends Fragment{
                                         DocumentSnapshot document = task.getResult();
                                         Boolean b = (Boolean) document.get("VotePossible");
                                         if (b) {
-                                            main.displayScreen(IdScreen.FRAGMENT_VOTE);
+                                            main.displayScreen3(IdScreen.FRAGMENT_VOTE,getArgument(),userStoryItems[position]);
                                         } else {
                                             Toast.makeText(getActivity(), "this us is not opened yet", Toast.LENGTH_SHORT).show();
                                         }

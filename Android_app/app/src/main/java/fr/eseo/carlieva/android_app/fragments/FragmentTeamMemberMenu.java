@@ -22,19 +22,14 @@ import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.List;
-
 import fr.eseo.carlieva.android_app.R;
-import fr.eseo.carlieva.android_app.pojo.Message;
 
 public class FragmentTeamMemberMenu extends Fragment {
     public FragmentTeamMemberMenu() {
     }
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private static final String TAG = "DocSnippets";
     ListView listView;
     static String[] suffixes =
             {    "1st",  "2nd",  "3rd",  "4th",  "5th",  "6th",  "7th",  "8th",  "9th",
@@ -50,7 +45,6 @@ public class FragmentTeamMemberMenu extends Fragment {
 
         root = inflater.inflate(R.layout.fragment_team_member_menu, container, false);
 
-        Log.d(TAG,FirebaseAuth.getInstance().getCurrentUser().toString() );
         db.collection("User").document(FirebaseAuth.getInstance().getCurrentUser().getEmail()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {

@@ -41,7 +41,6 @@ public class FragmentResultats extends Fragment {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ListView listUserStoryVote;
     private View root;
-    private static final String TAG = "DocSnippets";
 
     public String getArgument(){
         Bundle b = getArguments();
@@ -70,15 +69,11 @@ public class FragmentResultats extends Fragment {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 DocumentSnapshot document = task.getResult();
-                List<Long> group1 = (List<Long>) document.get("Note");
+                List<Integer> group1 = (List<Integer>) document.get("Note");
                 List<String> group2= (List<String>) document.get("User");
                 int somme = 0, moy;
-                for(int i = 0; i < group1.size(); i++)
-                    somme += group1.get(i);
 
-                // trouver la valeur moyenne
-                moy = somme / group1.size();
-                String [] resultsItems = new String[group1.size()+3];
+                String [] resultsItems = new String[group1.size()+2];
                 if (task.isSuccessful()) {
 
 
@@ -86,7 +81,6 @@ public class FragmentResultats extends Fragment {
                         resultsItems[i] = group2.get(i).toString()+" a mis la note de: "+ String.valueOf(group1.get(i));
                         resultsItems[group1.size()] = "La plus petite note est : "+ Collections.min(group1);
                         resultsItems[group1.size()+1] = "La plus grande note est : "+ Collections.max(group1);
-                        resultsItems[group1.size()+2] = "La note moyenne est : "+ moy;
                     }
 
                     listUserStoryVote=(ListView) root.findViewById(R.id.ListResultatsDef);
