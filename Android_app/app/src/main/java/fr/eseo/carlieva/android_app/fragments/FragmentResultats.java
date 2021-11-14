@@ -72,7 +72,7 @@ public class FragmentResultats extends Fragment implements View.OnClickListener 
 
 
                     for(int i=0;i<group1.size();i++){
-                        resultsItems[i] = group1.get(i).toString()+group2.get(i).toString();
+                        resultsItems[i] = String.valueOf(group1.get(i)).toString()+group2.get(i).toString();
                     }
 
                     listUserStoryVote=(ListView) root.findViewById(R.id.ListResultatsDef);
@@ -83,18 +83,7 @@ public class FragmentResultats extends Fragment implements View.OnClickListener 
                             resultsItems
                     );
                     listUserStoryVote.setAdapter(listViewAdapter);
-                    listUserStoryVote.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            MainActivity main = (MainActivity) getActivity();
 
-                            db.collection("UserStory").document(group.get(position).toString()).update("VotePossible",true);
-                            Toast.makeText(getActivity(), "lancement vote us"+position, Toast.LENGTH_SHORT).show();
-
-
-                        }
-
-                    });
                 }
             }
         });
