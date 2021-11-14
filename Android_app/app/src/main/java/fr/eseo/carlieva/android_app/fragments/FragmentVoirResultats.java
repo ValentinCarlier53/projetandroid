@@ -30,17 +30,12 @@ public class FragmentVoirResultats extends Fragment {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     ListView listView;
     private View root;
-
-
-
-
-    public static FragmentVoirResultats newInstance() {
-    }
+    
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_voir_resultats_fragment, container, false);
+        root= inflater.inflate(R.layout.fragment_voir_resultats_fragment, container, false);
 
         db.collection("Vote").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
