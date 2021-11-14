@@ -6,29 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".fragments.FragmentAjouterMembre">
 
-    <EditText
-        android:id="@+id/Membre"
-        android:layout_width="203dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="184dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Membre"
+    <ListView
+        android:id="@+id/ListMembers"
+        android:layout_width="285dp"
+        android:layout_height="437dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/CreerMembre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Créer le nouveau membre"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Membre"
-        app:layout_constraintVertical_bias="0.267" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

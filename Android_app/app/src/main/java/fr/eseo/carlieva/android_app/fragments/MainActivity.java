@@ -70,11 +70,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayScreen2(IdScreen idScreen,  String parameterValue) {
-        switch (idScreen) {
-            case FRAGMENT_USER_STORIES:
-                Bundle bundle = new Bundle();
-                bundle.putString("arg",parameterValue);
-                navController.navigate(R.id.action_fragmentTeamMemberMenu_to_userStories,bundle);
+
+            Bundle bundle = new Bundle();
+            bundle.putString("arg",parameterValue);
+
+            switch (idScreen) {
+
+                case FRAGMENT_USER_STORIES:
+                    navController.navigate(R.id.action_fragmentTeamMemberMenu_to_userStories,bundle);
+                    break;
+                case FRAGMENT_AJOUTER_MEMBRE:
+                    navController.navigate(R.id.action_fragmentLancerVote_to_fragmentAjouterMembre,bundle);
+                    break;
+                case FRAGMENT_LANCER_VOTE:
+                    navController.navigate(R.id.action_fragmentCreationEquipe_to_fragmentLancerVote,bundle);
+                    break;
+                default:
+                    break;
+            }
+
+
 
 
         }
@@ -82,4 +97,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-}

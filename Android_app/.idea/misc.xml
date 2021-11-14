@@ -6,14 +6,20 @@
         <entry key="../../../../../../layout/custom_preview.xml" value="0.325" />
         <entry key="app/src/main/res/layout/activity_data.xml" value="0.2318840579710145" />
         <entry key="app/src/main/res/layout/activity_firebase_ui.xml" value="0.23072916666666668" />
+        <entry key="app/src/main/res/layout/activity_liaison.xml" value="0.20606884057971014" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.23072916666666668" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23072916666666668" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.20606884057971014" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.23509182374270762" />
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.23072916666666668" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.20606884057971014" />
+        <entry key="app/src/main/res/layout/fragment_ajouter_equipe.xml" value="0.20606884057971014" />
+        <entry key="app/src/main/res/layout/fragment_ajouter_membre.xml" value="0.23331889109822596" />
         <entry key="app/src/main/res/layout/fragment_choisir_equipe.xml" value="0.2535410764872521" />
-        <entry key="app/src/main/res/layout/fragment_choix_resp.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_choix_resp.xml" value="0.31121868976587325" />
         <entry key="app/src/main/res/layout/fragment_creation_equipe.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_lancer_vote.xml" value="0.3834612738769928" />
         <entry key="app/src/main/res/layout/fragment_scrum_master_menu.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_team_member_menu.xml" value="0.278125" />

@@ -1,5 +1,7 @@
 package fr.eseo.carlieva.android_app.fragments;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -11,7 +13,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -33,6 +38,20 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ListView listUserStoryVote;
     private View root;
+    private static final String TAG = "DocSnippets";
+
+    public String getArgument(){
+        Bundle b = getArguments();
+        if(b==null){
+            return "Application Android";
+        }
+        else{
+            return b.getString("arg");
+        }
+    }
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,18 +63,18 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
 
 
 
-        db.collection("UserStory").get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        db.collection("Team").document(getArgument()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                DocumentSnapshot document = task.getResult();
+                List<String> group = (List<String>) document.get("us");
+                String [] userStoryItems = new String[group.size()];
+                if (task.isSuccessful()) {
 
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        String[] userStoryItems = new String[queryDocumentSnapshots.getDocuments().size()];
-                        List<DocumentSnapshot> list;
-                        if (!queryDocumentSnapshots.isEmpty()) {
-                             list = queryDocumentSnapshots.getDocuments();
-                            for (int i = 0; i < list.size(); i++) {
-                                userStoryItems[i] = "lancer vote "+ list.get(i).get("Nom").toString();
-                            }
+
+                    for(int i=0;i<group.size();i++){
+                        userStoryItems[i] = group.get(i).toString();
+                    }
 
                         listUserStoryVote=(ListView) root.findViewById(R.id.ListUserStoryVote);
 
@@ -70,10 +89,9 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 MainActivity main = (MainActivity) getActivity();
 
+                                    db.collection("UserStory").document(group.get(position).toString()).update("VotePossible",true);
                                     Toast.makeText(getActivity(), "lancement vote us"+position, Toast.LENGTH_SHORT).show();
-                                    Map<String, Object> us = new HashMap<>();
-                                    us.put("votePossible", true);
-                                    list.get(position).getReference().update(us);
+
 
                             }
 
@@ -88,7 +106,7 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
     public void onClick(View root) {
         MainActivity main = (MainActivity) getActivity();
         if (root.getId()==R.id.buttonAjouterMembre){
-                main.displayScreen(IdScreen.FRAGMENT_AJOUTER_MEMBRE);
+                main.displayScreen2(IdScreen.FRAGMENT_AJOUTER_MEMBRE,getArgument());
         }
     }
 }

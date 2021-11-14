@@ -1,5 +1,6 @@
 package fr.eseo.carlieva.android_app.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -36,6 +37,7 @@ public class fragmentChoisirEquipe extends Fragment  implements View.OnClickList
     private static final String TAG = "DocSnippets";
     private ListView listTeam;
     private Button buttonAjouterEquipe;
+
 
     static String[] suffixes =
             {"1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th",
@@ -87,7 +89,7 @@ public class fragmentChoisirEquipe extends Fragment  implements View.OnClickList
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 MainActivity main = (MainActivity) getActivity();
                                 Toast.makeText(getActivity(), suffixes[position] + " team", Toast.LENGTH_SHORT).show();
-                                main.displayScreen(IdScreen.FRAGMENT_LANCER_VOTE);
+                                main.displayScreen2(IdScreen.FRAGMENT_LANCER_VOTE,menuItems[position]);
                             }
                         });
                     }
