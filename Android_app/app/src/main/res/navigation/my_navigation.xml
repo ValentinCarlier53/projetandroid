@@ -29,9 +29,6 @@
             android:id="@+id/action_ScrumMasterMenu_to_fragment_creation_equipe"
             app:destination="@id/fragmentCreationEquipe" />
         <action
-            android:id="@+id/action_ScrumMasterMenu_to_fragment_choisir_equipe"
-            app:destination="@id/ChoisirUneEquipe" />
-        <action
             android:id="@+id/action_fragmentScrumMasterMenu_to_fragmentVoirResultats"
             app:destination="@id/fragmentVoirResultats" />
     </fragment>

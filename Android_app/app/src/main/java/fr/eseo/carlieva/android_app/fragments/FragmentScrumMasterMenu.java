@@ -18,13 +18,17 @@ public class FragmentScrumMasterMenu extends Fragment implements View.OnClickLis
 
     private View root;
     private Button buttonChoisirUneEquipe;
+    private Button buttonVoirResultats;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_scrum_master_menu, container, false);
-        buttonChoisirUneEquipe= root.findViewById(R.id.buttonChoisirUneEquipe);
+        buttonChoisirUneEquipe= root.findViewById(R.id.buttonVoirResultats);
         buttonChoisirUneEquipe.setOnClickListener(this);
+        buttonVoirResultats= root.findViewById(R.id.buttonVoirResultats);
+        buttonVoirResultats.setOnClickListener(this);
+
         return root;
     }
     @Override

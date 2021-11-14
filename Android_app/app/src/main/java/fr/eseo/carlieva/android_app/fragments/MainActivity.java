@@ -46,9 +46,6 @@ public class MainActivity extends AppCompatActivity {
             case FRAGMENT_CREATION_EQUIPE:
                 navController.navigate(R.id.action_ScrumMasterMenu_to_fragment_creation_equipe);
                 break;
-            case FRAGMENT_CHOISIR_EQUIPE:
-                navController.navigate(R.id.action_ScrumMasterMenu_to_fragment_choisir_equipe);
-                break;
             case FRAGMENT_USER_STORIES:
                 navController.navigate(R.id.action_fragmentTeamMemberMenu_to_userStories);
                 break;
@@ -57,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case FRAGMENT_AJOUTER_MEMBRE:
                 navController.navigate(R.id.action_fragmentLancerVote_to_fragmentAjouterMembre);
+                break;
+            case FRAGMENT_VOIR_RESULTATS:
+                navController.navigate(R.id.action_fragmentScrumMasterMenu_to_fragmentVoirResultats);
                 break;
             case FRAGMENT_LANCER_VOTE:
                 navController.navigate(R.id.action_fragmentCreationEquipe_to_fragmentLancerVote);
