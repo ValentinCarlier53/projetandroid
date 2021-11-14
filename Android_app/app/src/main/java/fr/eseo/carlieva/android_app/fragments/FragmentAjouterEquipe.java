@@ -44,15 +44,6 @@ public class FragmentAjouterEquipe extends Fragment implements View.OnClickListe
         MainActivity main = (MainActivity) getActivity();
         equipe=root.findViewById(R.id.Equipe);
         switch (v.getId()) {
-            case R.id.CreerMembre:
-
-                Map<String, Object> team = new HashMap<>();
-                team.put("Nom", equipe.getText().toString());
-                team.put("Users", FieldValue.arrayUnion());
-                team.put("us", FieldValue.arrayUnion());
-
-                db.collection("Team").document(equipe.getText().toString()).set(team);
-                Toast.makeText(getActivity()," Nouvelle équipe créée : ", Toast.LENGTH_SHORT).show();
 
                 case R.id.CreerEquipe:
 
@@ -64,6 +55,8 @@ public class FragmentAjouterEquipe extends Fragment implements View.OnClickListe
                 db.collection("Team").document(equipe.getText().toString()).set(team1);
                 Toast.makeText(getActivity()," Nouvelle équipe créée : ", Toast.LENGTH_SHORT).show();
                 break;
+
+
             default:
                 break;
         }

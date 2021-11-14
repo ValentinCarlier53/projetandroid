@@ -28,9 +28,9 @@ import java.util.Map;
 
 import fr.eseo.carlieva.android_app.R;
 
-public class FragmentLancerVote extends Fragment implements View.OnClickListener {
+public class FragmentResultats extends Fragment implements View.OnClickListener {
 
-    public FragmentLancerVote() {
+    public FragmentResultats() {
         // Required empty public constructor
     }
 
@@ -57,13 +57,11 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        root = inflater.inflate(R.layout.fragment_lancer_vote, container, false);
-        buttonAjouterMembre = root.findViewById(R.id.buttonAjouterMembre);
-        buttonAjouterMembre.setOnClickListener((View.OnClickListener) this);
+        root = inflater.inflate(R.layout.fragment_resultats, container, false);
 
 
 
-        db.collection("Team").document(getArgument()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        db.collection("Vote").document(getArgument()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 DocumentSnapshot document = task.getResult();
@@ -76,37 +74,37 @@ public class FragmentLancerVote extends Fragment implements View.OnClickListener
                         userStoryItems[i] = group.get(i).toString();
                     }
 
-                        listUserStoryVote=(ListView) root.findViewById(R.id.ListUserStoryVote);
+                    listUserStoryVote=(ListView) root.findViewById(R.id.ListResultatsDef);
 
-                        ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
-                                getActivity(),
-                                android.R.layout.simple_list_item_1,
-                                userStoryItems
-                        );
-                        listUserStoryVote.setAdapter(listViewAdapter);
-                        listUserStoryVote.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                MainActivity main = (MainActivity) getActivity();
+                    ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
+                            getActivity(),
+                            android.R.layout.simple_list_item_1,
+                            userStoryItems
+                    );
+                    listUserStoryVote.setAdapter(listViewAdapter);
+                    listUserStoryVote.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            MainActivity main = (MainActivity) getActivity();
 
-                                    db.collection("UserStory").document(group.get(position).toString()).update("VotePossible",true);
-                                    Toast.makeText(getActivity(), "lancement vote us"+position, Toast.LENGTH_SHORT).show();
+                            db.collection("UserStory").document(group.get(position).toString()).update("VotePossible",true);
+                            Toast.makeText(getActivity(), "lancement vote us"+position, Toast.LENGTH_SHORT).show();
 
 
-                            }
-
-                            });
                         }
-                    }
-                });
+
+                    });
+                }
+            }
+        });
         return root;
     }
-    
+
     @Override
     public void onClick(View root) {
         MainActivity main = (MainActivity) getActivity();
         if (root.getId()==R.id.buttonAjouterMembre){
-                main.displayScreen2(IdScreen.FRAGMENT_AJOUTER_MEMBRE,getArgument());
+            main.displayScreen2(IdScreen.FRAGMENT_AJOUTER_MEMBRE,getArgument());
         }
     }
 }

@@ -33,6 +33,9 @@ public class FragmentScrumMasterMenu extends Fragment implements View.OnClickLis
         if (v.getId() == R.id.buttonChoisirUneEquipe){
                 main.displayScreen(IdScreen.FRAGMENT_CREATION_EQUIPE);
         }
+        else if(v.getId() == R.id.buttonVoirResultats){
+            main.displayScreen(IdScreen.FRAGMENT_VOIR_RESULTATS);
+        }
     }
 
 }

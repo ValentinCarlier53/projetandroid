@@ -2,6 +2,7 @@ package fr.eseo.carlieva.android_app.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -14,8 +15,11 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -46,22 +50,19 @@ public class FragmentTeamMemberMenu extends Fragment {
 
         root = inflater.inflate(R.layout.fragment_team_member_menu, container, false);
 
-
-        db.collection("Team").get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        String [] menuItems = new String[ queryDocumentSnapshots.getDocuments().size()] ;
-                        if (!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-
-                            for (int i=0; i<list.size();i++) {
-                                menuItems[i]= list.get(i).get("Nom").toString();
+        Log.d(TAG,FirebaseAuth.getInstance().getCurrentUser().toString() );
+        db.collection("User").document(FirebaseAuth.getInstance().getCurrentUser().getEmail()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                DocumentSnapshot document = task.getResult();
+                List<String> group = (List<String>) document.get("Team");
+                String [] menuItems = new String[group.size()];
+                if (task.isSuccessful()) {
 
 
-                            }
-                        }
+                    for(int i=0;i<group.size();i++){
+                        menuItems[i] = group.get(i).toString();
+                    }
                         listView=(ListView) root.findViewById(R.id.ListTeam);
 
                         ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
@@ -87,11 +88,14 @@ public class FragmentTeamMemberMenu extends Fragment {
                     }
 
 
-                });
+                }
 
 
 
+
+
+    });
         return root;
-    }
 
+}
 }

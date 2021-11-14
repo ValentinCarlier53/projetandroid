@@ -28,6 +28,12 @@
         <action
             android:id="@+id/action_ScrumMasterMenu_to_fragment_creation_equipe"
             app:destination="@id/fragmentCreationEquipe" />
+        <action
+            android:id="@+id/action_ScrumMasterMenu_to_fragment_choisir_equipe"
+            app:destination="@id/ChoisirUneEquipe" />
+        <action
+            android:id="@+id/action_fragmentScrumMasterMenu_to_fragmentVoirResultats"
+            app:destination="@id/fragmentVoirResultats" />
     </fragment>
 
     <fragment
@@ -84,5 +90,19 @@
         android:name="fr.eseo.carlieva.android_app.fragments.FragmentAjouterMembre"
         android:label="fragment_ajouter_membre"
         tools:layout="@layout/fragment_ajouter_membre" />
+    <fragment
+        android:id="@+id/fragmentVoirResultats"
+        android:name="fr.eseo.carlieva.android_app.fragments.FragmentVoirResultats"
+        android:label="fragment_voir_resultats_fragment"
+        tools:layout="@layout/fragment_voir_resultats" >
+        <action
+            android:id="@+id/action_fragmentVoirResultats_to_fragmentResultats"
+            app:destination="@id/fragmentResultats" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentResultats"
+        android:name="fr.eseo.carlieva.android_app.fragments.FragmentResultats"
+        android:label="fragment_resultats"
+        tools:layout="@layout/fragment_resultats" />
 
 </navigation>
