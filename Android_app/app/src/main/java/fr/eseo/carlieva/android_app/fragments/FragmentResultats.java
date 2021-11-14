@@ -28,7 +28,7 @@ import java.util.Map;
 
 import fr.eseo.carlieva.android_app.R;
 
-public class FragmentResultats extends Fragment implements View.OnClickListener {
+public class FragmentResultats extends Fragment {
 
     public FragmentResultats() {
         // Required empty public constructor
@@ -90,12 +90,6 @@ public class FragmentResultats extends Fragment implements View.OnClickListener 
         return root;
     }
 
-    @Override
-    public void onClick(View root) {
-        MainActivity main = (MainActivity) getActivity();
-        if (root.getId()==R.id.buttonAjouterMembre){
-            main.displayScreen2(IdScreen.FRAGMENT_AJOUTER_MEMBRE,getArgument());
-        }
-    }
+
 }
 
