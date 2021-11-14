@@ -22,9 +22,12 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.OptionalDouble;
 
 import fr.eseo.carlieva.android_app.R;
 
@@ -53,6 +56,8 @@ public class FragmentResultats extends Fragment {
 
 
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -65,14 +70,23 @@ public class FragmentResultats extends Fragment {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 DocumentSnapshot document = task.getResult();
-                List<String> group1 = (List<String>) document.get("Note");
+                List<Long> group1 = (List<Long>) document.get("Note");
                 List<String> group2= (List<String>) document.get("User");
-                String [] resultsItems = new String[group1.size()];
+                int somme = 0, moy;
+                for(int i = 0; i < group1.size(); i++)
+                    somme += group1.get(i);
+
+                // trouver la valeur moyenne
+                moy = somme / group1.size();
+                String [] resultsItems = new String[group1.size()+3];
                 if (task.isSuccessful()) {
 
 
                     for(int i=0;i<group1.size();i++){
-                        resultsItems[i] = group2.get(i).toString()+"a mis la note de: "+ String.valueOf(group1.get(i));
+                        resultsItems[i] = group2.get(i).toString()+" a mis la note de: "+ String.valueOf(group1.get(i));
+                        resultsItems[group1.size()] = "La plus petite note est : "+ Collections.min(group1);
+                        resultsItems[group1.size()+1] = "La plus grande note est : "+ Collections.max(group1);
+                        resultsItems[group1.size()+2] = "La note moyenne est : "+ moy;
                     }
 
                     listUserStoryVote=(ListView) root.findViewById(R.id.ListResultatsDef);
