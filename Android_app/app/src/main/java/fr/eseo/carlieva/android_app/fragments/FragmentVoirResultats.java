@@ -1,7 +1,5 @@
 package fr.eseo.carlieva.android_app.fragments;
 
-import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -40,7 +37,7 @@ public class FragmentVoirResultats extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_voir_resultats_fragment, container, false);
+        return inflater.inflate(R.layout.fragment_voir_resultats, container, false);
 
         db.collection("Vote").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -71,9 +68,6 @@ public class FragmentVoirResultats extends Fragment {
                                 main.displayScreen2(IdScreen.FRAGMENT_RESULTATS, resultsItems[position]);
 
                             }
-
-
-
                             });
                         }
 

@@ -101,7 +101,7 @@
         android:id="@+id/fragmentVoirResultats"
         android:name="fr.eseo.carlieva.android_app.fragments.FragmentVoirResultats"
         android:label="fragment_voir_resultats_fragment"
-        tools:layout="@layout/fragment_voir_resultats_fragment" >
+        tools:layout="@layout/fragment_voir_resultats" >
         <action
             android:id="@+id/action_fragmentVoirResultats_to_fragmentResultats"
             app:destination="@id/fragmentResultats" />
