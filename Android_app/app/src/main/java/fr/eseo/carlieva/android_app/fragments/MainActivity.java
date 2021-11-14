@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
             case FRAGMENT_CREATION_EQUIPE:
                 navController.navigate(R.id.action_ScrumMasterMenu_to_fragment_creation_equipe);
                 break;
+            case FRAGMENT_CHOISIR_EQUIPE:
+                navController.navigate(R.id.action_ScrumMasterMenu_to_fragment_creation_equipe);
+                break;
             case FRAGMENT_USER_STORIES:
                 navController.navigate(R.id.action_fragmentTeamMemberMenu_to_userStories);
                 break;

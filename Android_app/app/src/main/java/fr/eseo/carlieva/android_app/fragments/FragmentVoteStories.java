@@ -23,6 +23,7 @@ public class FragmentVoteStories extends Fragment implements View.OnClickListene
     }
     private View root;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private Button button0;
     private Button button1;
     private Button button2;
     private Button button3;
@@ -39,6 +40,8 @@ public class FragmentVoteStories extends Fragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_vote_user_story, container, false);
+        button0= root.findViewById(R.id.button0);
+        button0.setOnClickListener(this);
         button1= root.findViewById(R.id.button1);
         button1.setOnClickListener(this);
         button2= root.findViewById(R.id.button2);
@@ -97,6 +100,9 @@ public class FragmentVoteStories extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         Toast.makeText(getActivity(), "Your vote has been taken into account", Toast.LENGTH_SHORT).show();
         switch (v.getId()) {
+            case R.id.button0:
+                addVote(0);
+                break;
             case R.id.button1:
                 addVote(1);
                 break;
