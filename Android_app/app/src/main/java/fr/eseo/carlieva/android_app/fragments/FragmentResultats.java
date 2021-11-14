@@ -65,13 +65,14 @@ public class FragmentResultats extends Fragment implements View.OnClickListener 
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 DocumentSnapshot document = task.getResult();
-                List<String> group = (List<String>) document.get("us");
-                String [] userStoryItems = new String[group.size()];
+                List<String> group1 = (List<String>) document.get("Note");
+                List<String> group2= (List<String>) document.get("User");
+                String [] resultsItems = new String[group1.size()];
                 if (task.isSuccessful()) {
 
 
-                    for(int i=0;i<group.size();i++){
-                        userStoryItems[i] = group.get(i).toString();
+                    for(int i=0;i<group1.size();i++){
+                        resultsItems[i] = group1.get(i).toString()+group2.get(i).toString();
                     }
 
                     listUserStoryVote=(ListView) root.findViewById(R.id.ListResultatsDef);
@@ -79,7 +80,7 @@ public class FragmentResultats extends Fragment implements View.OnClickListener 
                     ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(
                             getActivity(),
                             android.R.layout.simple_list_item_1,
-                            userStoryItems
+                            resultsItems
                     );
                     listUserStoryVote.setAdapter(listViewAdapter);
                     listUserStoryVote.setOnItemClickListener(new AdapterView.OnItemClickListener() {
