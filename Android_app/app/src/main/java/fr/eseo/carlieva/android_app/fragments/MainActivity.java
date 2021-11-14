@@ -85,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
                 case FRAGMENT_LANCER_VOTE:
                     navController.navigate(R.id.action_fragmentCreationEquipe_to_fragmentLancerVote,bundle);
                     break;
+                case FRAGMENT_RESULTATS:
+                    navController.navigate(R.id.action_fragmentVoirResultats_to_fragmentResultats,bundle);
+                    break;
                 default:
                     break;
             }
@@ -93,6 +96,29 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+
+    public void displayScreen3(IdScreen idScreen,  String parameterValue1,String parameterValue2) {
+
+        Bundle bundle = new Bundle();
+        bundle.putString("team",parameterValue1);
+        bundle.putString("us",parameterValue2);
+
+        switch (idScreen) {
+
+            case FRAGMENT_VOTE:
+                navController.navigate(R.id.action_userStories_to_voteStories2,bundle);
+                break;
+            case FRAGMENT_VOIR_RESULTATS:
+                navController.navigate(R.id.action_fragmentScrumMasterMenu_to_fragmentVoirResultats,bundle);
+                break;
+            default:
+                break;
+        }
+
+
+
+
+    }
 
     }
 

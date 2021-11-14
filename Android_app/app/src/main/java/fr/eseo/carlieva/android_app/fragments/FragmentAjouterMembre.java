@@ -86,9 +86,9 @@ public class FragmentAjouterMembre extends Fragment {
                                     Map<String, Object> user = new HashMap<>();
                                     user.put("Team", FieldValue.arrayUnion(getArgument()));
                                     list.get(position).getReference().update(user);
-                                    //pareil côté équipe
+
                                     Map<String, Object> team = new HashMap<>();
-                                    team.put("Users", FieldValue.arrayUnion(FirebaseAuth.getInstance().getCurrentUser().getEmail()));
+                                    team.put("Users", FieldValue.arrayUnion(list.get(position).get("Mail").toString()));
                                     db.collection("Team").document(getArgument()).update(team);
                                     Toast.makeText(getActivity(),"User added", Toast.LENGTH_SHORT).show();
 
