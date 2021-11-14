@@ -72,7 +72,7 @@ public class FragmentResultats extends Fragment {
 
 
                     for(int i=0;i<group1.size();i++){
-                        resultsItems[i] = String.valueOf(group1.get(i)).toString()+group2.get(i).toString();
+                        resultsItems[i] = group2.get(i).toString()+"a mis la note de: "+ String.valueOf(group1.get(i));
                     }
 
                     listUserStoryVote=(ListView) root.findViewById(R.id.ListResultatsDef);
