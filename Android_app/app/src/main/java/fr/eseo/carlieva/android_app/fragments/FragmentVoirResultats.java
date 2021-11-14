@@ -32,7 +32,7 @@ public class FragmentVoirResultats extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        root= inflater.inflate(R.layout.fragment_voir_resultats_fragment, container, false);
+        root= inflater.inflate(R.layout.fragment_voir_resultats, container, false);
 
         db.collection("Vote").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {

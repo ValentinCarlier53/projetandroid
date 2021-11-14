@@ -109,4 +109,3 @@ public class FragmentResultats extends Fragment implements View.OnClickListener 
     }
 }
 
-}
